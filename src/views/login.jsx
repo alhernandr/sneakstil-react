@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom';
 
 import styles from '../css/styles.module.css'; // Asegúrate de que esta ruta sea correcta
 
+import Header from '../components/header/header'
+import Footer from '../components/footer/footer'
+
 const Login = () => {
 
     // Estado inicial para los campos de entrada y errores
@@ -41,6 +44,7 @@ const Login = () => {
 
   return (
     <div>
+      <Header/>
       <section>
         <div className={styles.contenedorLog}>
           <center>
@@ -62,6 +66,7 @@ const Login = () => {
           </center>
         </div>
       </section>
+      <Footer/>
     </div>
   );
 };

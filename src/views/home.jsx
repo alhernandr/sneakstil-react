@@ -17,9 +17,13 @@ import zapatilla4 from '../img/new1.png'
 import zapatilla5 from '../img/1 (1).png'
 import jordan7 from '../img/jordan-2-retro-low-sp-off-white-white-red-2-removebg-preview.png'
 
+import Header from '../components/header/header'
+import Footer from '../components/footer/footer'
+
 const home = () => {
   return (
 <div>
+  <Header/>
   <section className={styles.home} id="home">
     <div className={`${styles.home__container} ${styles. bdGrid}`}>
       {/* <!-- Sneaker --> */}
@@ -34,6 +38,7 @@ const home = () => {
         <p className={styles.home__description}>Explore the new collection of sneaker</p>
         <Link to="/shop" className={styles.button}>Explore now</Link>
       </div>
+      
     </div>
   </section>
 
@@ -192,6 +197,7 @@ const home = () => {
       </form>
     </div>
   </section>
+  <Footer/>
 </div>
   )
 }

@@ -2,8 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from '../css/styles.module.css';
 
+
 import Header from '../components/header/header'
 import Footer from '../components/footer/footer'
+
 
 const IndexAdmin = ({ resultado, productos }) => {
   // Función para manejar la creación de nuevos productos
@@ -15,7 +17,7 @@ const IndexAdmin = ({ resultado, productos }) => {
 
   return (
     <div>
-      <Header/>
+        <Header/>
       <div className={styles.contenedorAdminSection}>
         <h1>Administrador</h1><br />
 
@@ -36,20 +38,6 @@ const IndexAdmin = ({ resultado, productos }) => {
             <td>Disponibilidad</td>
             <td>Operaciones</td>
           </tr>
-          {/* {productos.map((producto) => (
-            <tr key={producto.id}>
-              <td><img src={`./build/img/${producto.nombre}.png`} alt={producto.nombre} /></td>
-              <td>{producto.id}</td>
-              <td>{producto.nombre}</td>
-              <td>{producto.marca}</td>
-              <td>{producto.precio}</td>
-              <td>{producto.disponibilidad}</td>
-              <td className={styles.operaciones}>
-                <a href={`/actualizar?id=${producto.id}`} className="boton boton-actualizar">Actualizar</a>
-                <a href={`/borrar?id=${producto.id}`} className="boton boton-block">Borrar</a>
-              </td>
-            </tr>
-           ))}  */}
         </table>
       </div>
       <Footer/>

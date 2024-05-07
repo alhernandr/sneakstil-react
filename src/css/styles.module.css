@@ -198,6 +198,7 @@ img {
   background-color: #f2f2f2;
   overflow: hidden;
 }
+
 .home__container {
   height: calc(100vh - 3rem);
 }
@@ -232,6 +233,20 @@ img {
 }
 .home__description {
   margin-bottom: 3rem;
+}
+
+.home::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  margin-bottom:20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent; /* Ajusta el tamaño de la flecha según sea necesario */
+  border-right: 20px solid transparent;
+  border-top: 20px solid #000;
 }
 
 /*===== FEATURED =====*/
@@ -613,7 +628,7 @@ img {
   }
 
   .section {
-    padding: 7rem 0.3rem;
+    padding: 3rem 0.3rem;
   }
 
   .sectionTitle::after {

@@ -1,6 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 
+import Header from '../components/header/header'
+import Footer from '../components/footer/footer'
+
 import styles from '../css/styles.module.css';
 import jordan1 from '../img/Jordan 1 Retro High OG SP Travis Scott Mocha.png'
 import jordan2 from '../img/Jordan 4 Retro Military Black.png'
@@ -17,6 +20,7 @@ import jordan11 from '../img/Jordan 1 Retro Low OG SP Fragment x Travis Scott.pn
 const Shop = () => {
   return (
     <div>
+      <Header/>
       {/* <!--===== ALL PRODUCTS =====--> */}
       <section className={`${styles.featured} ${styles.section} ${styles.shop}`} id="shop">
         <h2 className={styles.sectionTitle}>All Products</h2>
@@ -102,6 +106,7 @@ const Shop = () => {
           </div>
         </div>
       </section>
+      <Footer/>
     </div>
   );
 };

@@ -2,9 +2,13 @@ import React from 'react';
 import styles from '../css/styles.module.css';
 import { Link } from 'react-router-dom';
 
+import Header from '../components/header/header'
+import Footer from '../components/footer/footer'
+
 const SignIn = () => {
   return (
     <div>
+      <Header/>
       <div className={styles.contenedorLog}>
         <center>  
           {/* Título del formulario de registro */}
@@ -31,6 +35,7 @@ const SignIn = () => {
           </form>
         </center>
       </div>
+      <Footer/>
     </div>
   );
 }
