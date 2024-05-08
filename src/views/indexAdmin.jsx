@@ -1,31 +1,34 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import styles from '../css/styles.module.css';
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import { Link } from "react-router-dom";
+import styles from "../css/styles.module.css";
 
-import Header from '../components/header/header'
-import Footer from '../components/footer/footer'
+import Header from "../components/header/header";
+import Footer from "../components/footer/footer";
 
-const IndexAdmin = ({ resultado, productos }) => {
-  // Función para manejar la creación de nuevos productos
-  const handleNewProduct = () => {
-    // Aquí iría la lógica para crear un nuevo producto
-    console.log("Crear nuevo producto");
-  };
+
+const IndexAdmin = () => {
+ 
+  const [productosList, setProductosList] = useState([]);
 
 
   return (
     <div>
-      <Header/>
-      <div className={styles.contenedorAdminSection}>
-        <h1>Administrador</h1><br />
+      <Header />
+      <div className={`${styles.contenedorAdmin} ${styles.section}`}>
+        <h1>Administrador</h1>
+        <br />
 
         {/* Enlace para agregar un nuevo producto */}
-        <Link to="/crear" className={styles.botonVerde} onClick={handleNewProduct}>Nueva Sneaker</Link><br></br>
+        <Link to="/admin/crear" className={styles.botonVerde}>
+          Nueva Sneaker
+        </Link>
+        <br></br>
 
         {/* Mensaje de éxito mostrado después de agregar un nuevo producto */}
-        {resultado === 1 && <p className={styles.alertaExito}>PRODUCTO AÑADIDO CORRECTAMENTE</p>}
-
+        {/* {resultado === 1 && <p className={styles.alertaExito}>PRODUCTO AÑADIDO CORRECTAMENTE</p>} */}
         {/* Tabla para mostrar los productos existentes */}
+
         <table>
           <tr>
             <td>Imagen</td>
@@ -36,23 +39,35 @@ const IndexAdmin = ({ resultado, productos }) => {
             <td>Disponibilidad</td>
             <td>Operaciones</td>
           </tr>
-          {/* {productos.map((producto) => (
-            <tr key={producto.id}>
-              <td><img src={`./build/img/${producto.nombre}.png`} alt={producto.nombre} /></td>
-              <td>{producto.id}</td>
-              <td>{producto.nombre}</td>
-              <td>{producto.marca}</td>
-              <td>{producto.precio}</td>
-              <td>{producto.disponibilidad}</td>
-              <td className={styles.operaciones}>
-                <a href={`/actualizar?id=${producto.id}`} className="boton boton-actualizar">Actualizar</a>
-                <a href={`/borrar?id=${producto.id}`} className="boton boton-block">Borrar</a>
-              </td>
-            </tr>
-           ))}  */}
         </table>
+        <table  key={productosList.id}>
+          <tr>
+            <td>{productosList.imagen}</td>  
+            <td>{productosList.id}</td>
+            <td>{productosList.nombre}</td>
+            <td>{productosList.marca}</td>
+            <td>{productosList.precio}</td>
+            <td>{productosList.disponibilidad}</td>
+            <td>
+              <Link
+                to="/admin/actualizar"
+                // className="boton boton-actualizar"
+              >
+                Actualizar
+              </Link>
+              </td>
+              <td>
+              <Link
+                to="/borrar"
+                // className="boton boton-block"
+              >
+                Borrar
+              </Link>
+            </td>
+          </tr>
+        </table>
+        <Footer />
       </div>
-      <Footer/>
     </div>
   );
 };

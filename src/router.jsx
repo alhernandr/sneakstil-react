@@ -8,16 +8,20 @@ import Login from "./views/login";
 import SignIn from "./views/signin";
 import Admin from "./views/indexAdmin";
 import Basket from "./views/basket";
+import Actualizar from "./views/actualizar"
+import Crear from "./views/crear"
 
 function router() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/shop" element={<Shop />} />
-      <Route path="/shop/login" element={<Login />} />
-      <Route path="/shop/signin" element={<SignIn />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/login/signin" element={<SignIn />} />
       <Route path='/admin' element={<Admin/>}/>
       <Route path="/basket" element={<Basket/>}/>
+      <Route path="/admin/crear" element={<Crear/>}/>
+      <Route path="/admin/actualizar" element={<Actualizar/>}/>
     </Routes>
   );
 }

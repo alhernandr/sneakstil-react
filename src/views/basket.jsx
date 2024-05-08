@@ -7,12 +7,8 @@ import Header from '../components/header/header'
 import Footer from '../components/footer/footer'
 
 
-const IndexAdmin = ({ resultado, productos }) => {
-  // Función para manejar la creación de nuevos productos
-  const handleNewProduct = () => {
-    // Aquí iría la lógica para crear un nuevo producto
-    console.log("Crear nuevo producto");
-  };
+const IndexAdmin = () => {
+  
 
 
   return (
@@ -22,10 +18,10 @@ const IndexAdmin = ({ resultado, productos }) => {
         <h1>Administrador</h1><br />
 
         {/* Enlace para agregar un nuevo producto */}
-        <Link to="/crear" className={styles.botonVerde} onClick={handleNewProduct}>Nueva Sneaker</Link><br></br>
+        <Link to="/crear" className={styles.botonVerde}>Nueva Sneaker</Link><br></br>
 
         {/* Mensaje de éxito mostrado después de agregar un nuevo producto */}
-        {resultado === 1 && <p className={styles.alertaExito}>PRODUCTO AÑADIDO CORRECTAMENTE</p>}
+        {/* {resultado === 1 && <p className={styles.alertaExito}>PRODUCTO AÑADIDO CORRECTAMENTE</p>} */}
 
         {/* Tabla para mostrar los productos existentes */}
         <table>
