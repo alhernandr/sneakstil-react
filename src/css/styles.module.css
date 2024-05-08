@@ -130,7 +130,8 @@ img {
 .nav {
   height: 3rem;
   display: flex;
-  justify-content: space-between;
+  flex-direction: row;
+  justify-content: space-around;
   align-items: center;
 }
 

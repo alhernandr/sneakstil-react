@@ -51,7 +51,7 @@ const Footer = () => {
           </div>
 
           <div className={styles.footer__box}>
-            <h3 className={styles.footer__title}>SUPPERT</h3>
+            <h3 className={styles.footer__title}>SUPPORT</h3>
 
             <ul>
               <li>

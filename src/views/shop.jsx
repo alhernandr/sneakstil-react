@@ -22,75 +22,75 @@ const Shop = () => {
     <div>
       <Header/>
       {/* <!--===== ALL PRODUCTS =====--> */}
-      <section className={`${styles.featured} ${styles.section} ${styles.shop}`} id="shop">
-        <h2 className={styles.sectionTitle}>All Products</h2>
+      <section className={`${styles.featured} ${styles.section}`} id="shop">
+        <h2 className={styles.section__title}>All Products</h2>
 
-        <div className={`${styles.featuredContainer} ${styles.bdGrid}`}>
-          <article className={`${styles.sneaker} ${styles.article}`}>
-            <img src={jordan1} alt="" className={styles.sneakerImg} />
-            <span className={styles.sneakerName}>Jordan 1 Retro High OG SP Travis Scott Mocha</span>
-            <span className={styles.sneakerPrecio}>1.366€</span>
+        <div className={`${styles.featured__container} ${styles.bdGrid}`}>
+          <article className={styles.sneaker}>
+            <img src={jordan1} alt="" className={styles.sneaker__img} />
+            <span className={styles.sneaker__name}>Jordan 1 Retro High OG SP Travis Scott Mocha</span>
+            <span className={styles.sneaker__precio}>1.366€</span>
             <Link to="" className={styles.buttonLight}>Add to Cart <i className="bx bx-right-arrow-alt button-icon"></i></Link>
           </article>
           
-          <article className={`${styles.sneaker} ${styles.article}`}>
-            <img src={jordan2} alt="" className={styles.sneakerImg} />
-            <span className={styles.sneakerName}>Jordan 4 Retro Military Black</span>
-            <span className={styles.sneakerPrecio}>546€</span>
+          <article className={styles.sneaker}>
+            <img src={jordan2} alt="" className={styles.sneaker__img} />
+            <span className={styles.sneaker__name}>Jordan 4 Retro Military Black</span>
+            <span className={styles.sneaker__precio}>546€</span>
             <Link to="" className={styles.buttonLight}>Add to Cart <i className="bx bx-right-arrow-alt button-icon"></i></Link>
           </article>
-          <article className={`${styles.sneaker} ${styles.article}`}>
-            <img src={jordan3} alt="" className={styles.sneakerImg} />
-            <span className={styles.sneakerName}>Jordan 3 Retro SP A Ma Maniére</span>
-            <span className={styles.sneakerPrecio}>461€</span>
+          <article className={styles.sneaker}>
+            <img src={jordan3} alt="" className={styles.sneaker__img} />
+            <span className={styles.sneaker__name}>Jordan 3 Retro SP A Ma Maniére</span>
+            <span className={styles.sneaker__precio}>461€</span>
             <Link to="" className={styles.buttonLight}>Add to Cart <i className="bx bx-right-arrow-alt button-icon"></i></Link>
           </article>
-          <article className={`${styles.sneaker} ${styles.article}`}>
-            <img src={jordan4} alt="" className={styles.sneakerImg} />
-            <span className={styles.sneakerName}>Jordan 4 Retro Canyon Purple</span>
-            <span className={styles.sneakerPrecio}>289€</span>
+          <article className={styles.sneaker}>
+            <img src={jordan4} alt="" className={styles.sneaker__img} />
+            <span className={styles.sneaker__name}>Jordan 4 Retro Canyon Purple</span>
+            <span className={styles.sneaker__precio}>289€</span>
             <Link to="" className={styles.buttonLight}>Add to Cart <i className="bx bx-right-arrow-alt button-icon"></i></Link>
           </article>
-          <article className={`${styles.sneaker} ${styles.article}`}>
-            <img src={jordan5} alt="" className={styles.sneakerImg} />
-            <span className={styles.sneakerName}>Jordan 4 Frozen Moments</span>
-            <span className={styles.sneakerPrecio}>284€</span>
+          <article className={styles.sneaker}>
+            <img src={jordan5} alt="" className={styles.sneaker__img} />
+            <span className={styles.sneaker__name}>Jordan 4 Frozen Moments</span>
+            <span className={styles.sneaker__precio}>284€</span>
             <Link to="" className={styles.buttonLight}>Add to Cart <i className="bx bx-right-arrow-alt button-icon"></i></Link>
           </article>
-          <article className={`${styles.sneaker} ${styles.article}`}>
-            <img src={jordan6} alt="" className={styles.sneakerImg} />
-            <span className={styles.sneakerName}>Jordan 11 Retro Midnight Navy</span>
-            <span className={styles.sneakerPrecio}>120€</span>
+          <article className={styles.sneaker}>
+            <img src={jordan6} alt="" className={styles.sneaker__img} />
+            <span className={styles.sneaker__name}>Jordan 11 Retro Midnight Navy</span>
+            <span className={styles.sneaker__precio}>120€</span>
             <Link to="" className={styles.buttonLight}>Add to Cart <i className="bx bx-right-arrow-alt button-icon"></i></Link>
           </article>
-          <article className={`${styles.sneaker} ${styles.article}`}>
-            <img src={jordan7} alt="" className={styles.sneakerImg} />
-            <span className={styles.sneakerName}>Jordan 1 Mid SE Fearless Melody Ehsani</span>
-            <span className={styles.sneakerPrecio}>885€</span>
+          <article className={styles.sneaker}>
+            <img src={jordan7} alt="" className={styles.sneaker__img} />
+            <span className={styles.sneaker__name}>Jordan 1 Mid SE Fearless Melody Ehsani</span>
+            <span className={styles.sneaker__precio}>885€</span>
             <Link to="" className={styles.buttonLight}>Add to Cart <i className="bx bx-right-arrow-alt button-icon"></i></Link>
           </article>
-          <article className={`${styles.sneaker} ${styles.article}`}>
-            <img src={jordan8} alt="" className={styles.sneakerImg} />
-            <span className={styles.sneakerName}>Jordan 1 Retro High OG Palomino</span>
-            <span className={styles.sneakerPrecio}>171€</span>
+          <article className={styles.sneaker}>
+            <img src={jordan8} alt="" className={styles.sneaker__img} />
+            <span className={styles.sneaker__name}>Jordan 1 Retro High OG Palomino</span>
+            <span className={styles.sneaker__precio}>171€</span>
             <Link to="" className={styles.buttonLight}>Add to Cart <i className="bx bx-right-arrow-alt button-icon"></i></Link>
           </article>
-          <article className={`${styles.sneaker} ${styles.article}`}>
-            <img src={jordan9} alt="" className={styles.sneakerImg} id="dnk" />
-            <span className={styles.sneakerName} id="dnk-text">Nike SB Dunk Low Concepts Purple Lobster</span>
-            <span className={styles.sneakerPrecio}>982€</span>
+          <article className={styles.sneaker}>
+            <img src={jordan9} alt="" className={styles.sneaker__img} id="dnk" />
+            <span className={styles.sneaker__name} id="dnk-text">Nike SB Dunk Low Concepts Purple Lobster</span>
+            <span className={styles.sneaker__precio}>982€</span>
             <Link to="" className={styles.buttonLight}>Add to Cart <i className="bx bx-right-arrow-alt button-icon"></i></Link>
           </article>
-          <article className={`${styles.sneaker} ${styles.article}`}>
-            <img src={jordan10} alt="" className={styles.sneakerImg} id="onyx"/>
-            <span className={styles.sneakerName} id="onyx-text">adidas Yeezy Foam RNR Onyx</span>
-            <span className={styles.sneakerPrecio}>114€</span>
+          <article className={styles.sneaker}>
+            <img src={jordan10} alt="" className={styles.sneaker__img} id="onyx"/>
+            <span className={styles.sneaker__name} id="onyx-text">adidas Yeezy Foam RNR Onyx</span>
+            <span className={styles.sneaker__precio}>114€</span>
             <Link to="" className={styles.buttonLight}>Add to Cart <i className="bx bx-right-arrow-alt button-icon"></i></Link>
           </article>
-          <article className={`${styles.sneaker} ${styles.article}`}>
-            <img src={jordan11} alt="" className={styles.sneakerImg} id="trvis" />
-            <span className={styles.sneakerName} id="trvis">Jordan 1 Retro Low OG SP Fragment x Travis Scott</span>
-            <span className={styles.sneakerPrecio}>1.444€</span>
+          <article className={styles.sneaker}>
+            <img src={jordan11} alt="" className={styles.sneaker__img} id="trvis" />
+            <span className={styles.sneaker__name} id="trvis">Jordan 1 Retro Low OG SP Fragment x Travis Scott</span>
+            <span className={styles.sneaker__precio}>1.444€</span>
             <Link to="" className={styles.buttonLight}>Add to Cart <i className="bx bx-right-arrow-alt button-icon"></i></Link>
           </article>
         </div>
