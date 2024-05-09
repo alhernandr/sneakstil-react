@@ -21,7 +21,7 @@ function router() {
       <Route path='/admin' element={<Admin/>}/>
       <Route path="/basket" element={<Basket/>}/>
       <Route path="/admin/crear" element={<Crear/>}/>
-      <Route path="/admin/actualizar" element={<Actualizar/>}/>
+      <Route path="/admin/actualizar/:id" element={<Actualizar/>}/>
     </Routes>
   );
 }
