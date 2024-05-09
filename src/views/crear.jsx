@@ -3,41 +3,17 @@ import styles from '../css/styles.module.css';
 import axios from "axios";
 import logo from '../img/logo.png';
 
-const Crear = async (e) => {
-    const [nombreProducto , setNombre] = useState("");
-    const [marcaProducto , setMarca] = useState("");
-    const [precioProducto , setPrecio] = useState("");
-    const [disponibilidadProducto , setDisponibilidad] = useState("");
-    const [imagenProducto , setImagen] = useState("");
-
-    const [productosList, setProductosList] = useState([]);
-
-    const handleSubmit = async (e) => {
-      e.preventDefault();
-      try {
-          const result = await axios.post("http://localhost:3000/api/insert", {
-              nombre: nombreProducto,
-              marca: marcaProducto,
-              precio: precioProducto,
-              disponibilidad: disponibilidadProducto,
-              imagen: imagenProducto
-          });
-          // Assuming the server responds with the newly created product
-          setProductosList([...productosList, result.data]);
-      } catch (error) {
-          console.error(error);
-      }
-  };
-
+const Crear = () => {
+   
  return (
     <div>
       <main className={`${styles.contenedor} ${styles.seccion}`}>
-        <form className={styles.formulario} onSubmit={handleSubmit} method="POST" enctype="multipart/form-data">
+        <form className={styles.formulario} method="POST" enctype="multipart/form-data">
           <h1>Crear</h1>
           <legend><u>Información General</u></legend>
 
           <label htmlFor="nombre">Nombre: </label>
-          <input type="text" id="nombre" name="nombre" onChange={(e) => (e.target.value)} />
+          <input type="text" id="nombre" name="nombre" />
 
           <label htmlFor="marca">Marca:</label>
           <input type="text" name="marca" id="marca" />
