@@ -62,7 +62,7 @@ const IndexAdmin = () => {
               <td>{dato.disponibilidad}</td>
               <td>
                 <div>
-                <Button href={`http://localhost:5000/admin/actualizar/${dato.id}`}>Actualizar</Button>
+                <Button href={`/admin/actualizar/${dato.id}`}>Actualizar</Button>
                 </div>
                 <div>
                   ---------

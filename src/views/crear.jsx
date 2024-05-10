@@ -12,19 +12,16 @@ const Crear = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const formData = new FormData();
-    formData.append('nombre', nombre);
-    formData.append('marca', marca);
-    formData.append('imagen', imagen);
-    formData.append('precio', precio);
-    formData.append('disponibilidad', disponibilidad);
-
+  
+    const data = {
+      nombre,
+      marca,
+      precio,
+      disponibilidad
+    };
+  
     try {
-      await axios.post('http://localhost:5000/insertar-datos', formData, {
-  headers: {
-    'Content-Type': 'multipart/form-data'
-  }
-});
+      await axios.post('http://localhost:5000/insertar-datos', data);
       alert('Datos insertados correctamente');
       // Aquí puedes redirigir a otra página o realizar alguna otra acción después de insertar los datos
     } catch (error) {

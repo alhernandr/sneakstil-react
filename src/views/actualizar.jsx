@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useParams } from 'react-router-dom';
 import styles from '../css/styles.module.css';
 import axios from "axios";
 import logo from '../img/logo.png';
@@ -6,6 +7,7 @@ import Header from '../components/header/header';
 import Footer from '../components/footer/footer';
 
 const Actualizar = () => {
+  const { id } = useParams();
   const [nombre, setNombre] = useState('');
   const [marca, setMarca] = useState('');
   const [imagen, setImagen] = useState('');
@@ -14,26 +16,24 @@ const Actualizar = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const formData = new FormData();
-    formData.append('nombre', nombre);
-    formData.append('marca', marca);
-    formData.append('imagen', imagen);
-    formData.append('precio', precio);
-    formData.append('disponibilidad', disponibilidad);
+    const data = {
+      nombre,
+      marca,
+      imagen,
+      precio,
+      disponibilidad
+    };
 
     try {
       // Realizar la solicitud PUT al endpoint correspondiente en tu servidor
-      await axios.put('http://localhost:5000/actualizar-datos/:id', formData, {
-        headers: {
-          'Content-Type': 'multipart/form-data'
-        }
-      });
+      await axios.put(`http://localhost:5000/actualizar-datos/${id}`, data);
       alert('Datos actualizados correctamente');
     } catch (error) {
       console.error('Error al actualizar datos: ', error);
       alert('Error al actualizar datos');
     }
   };
+  
 
   return (
     <div>
