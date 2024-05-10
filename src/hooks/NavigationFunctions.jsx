@@ -1,16 +1,10 @@
 import { useNavigate } from "react-router";
 
-// para la vista licencia1
+// para la vista adminIndex
 
-export function useGoPersonaL() {
+export function useGoAdmin() {
   const navigate = useNavigate();
-  return () => navigate("/licencia1/persona");
+  return () => navigate("/admin");
 }
 
-// para la vista de persona
-
-export function useGoPersonaP() {
-  const navigate = useNavigate();
-  return () => navigate("/licencia1/persona");
-}
 

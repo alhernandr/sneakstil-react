@@ -48,6 +48,16 @@ const Header = () => {
                   Shop
                 </Link>
               </li>
+              <li className={styles.nav__item}>
+                <Link to="/login" className={styles.navLink}>
+                  LogIn
+                </Link>
+              </li>
+              <li className={styles.nav__item}>
+                <Link to="/cesta" className={styles.navLink}>
+                  🛒
+                </Link>
+              </li>
             </ul>
           </div>
           <div className={styles.nav__shop}>

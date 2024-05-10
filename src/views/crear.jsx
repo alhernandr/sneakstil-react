@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styles from '../css/styles.module.css';
 import axios from "axios";
+import { useNavigate } from 'react-router-dom';
 import logo from '../img/logo.png';
 
 const Crear = () => {
@@ -9,6 +10,8 @@ const Crear = () => {
   const [imagen, setImagen] = useState('');
   const [precio, setPrecio] = useState('');
   const [disponibilidad, setDisponibilidad] = useState('');
+
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -23,7 +26,7 @@ const Crear = () => {
     try {
       await axios.post('http://localhost:5000/insertar-datos', data);
       alert('Datos insertados correctamente');
-      // Aquí puedes redirigir a otra página o realizar alguna otra acción después de insertar los datos
+      navigate("/admin");
     } catch (error) {
       console.error('Error al insertar datos: ', error);
       alert('Error al insertar datos');

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams,  useNavigate} from 'react-router-dom';
 import styles from '../css/styles.module.css';
 import axios from "axios";
 import logo from '../img/logo.png';
@@ -13,6 +13,8 @@ const Actualizar = () => {
   const [imagen, setImagen] = useState('');
   const [precio, setPrecio] = useState('');
   const [disponibilidad, setDisponibilidad] = useState('');
+
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -28,12 +30,13 @@ const Actualizar = () => {
       // Realizar la solicitud PUT al endpoint correspondiente en tu servidor
       await axios.put(`http://localhost:5000/actualizar-datos/${id}`, data);
       alert('Datos actualizados correctamente');
+      navigate("/admin");
     } catch (error) {
       console.error('Error al actualizar datos: ', error);
       alert('Error al actualizar datos');
     }
   };
-  
+
 
   return (
     <div>
@@ -77,3 +80,5 @@ const Actualizar = () => {
 };
 
 export default Actualizar;
+
+

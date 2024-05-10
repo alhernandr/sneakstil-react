@@ -1,72 +1,108 @@
-import React, { useState }from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import axios from "axios";
 
-import styles from '../css/styles.module.css'; // Asegúrate de que esta ruta sea correcta
-
-import Header from '../components/header/header'
-import Footer from '../components/footer/footer'
+import styles from "../css/styles.module.css";
+import Header from "../components/header/header";
+import Footer from "../components/footer/footer";
 
 const Login = () => {
+  const [nombre, setNombre] = useState("");
+  const [pasword, setPasword] = useState("");
+  const [errors, setErrors] = useState({ nombre: "", pasword: "" });
 
-    // Estado inicial para los campos de entrada y errores
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [errors, setErrors] = useState({ username: '', password: '' });
-
-  // Función para manejar el cambio en el campo de nombre de usuario
-  const handleUsernameChange = (event) => {
-    setUsername(event.target.value);
-    // Validación básica aquí, por ejemplo, verificar que el nombre de usuario no esté vacío
+  const handleNombreChange = (event) => {
+    setNombre(event.target.value);
     if (!event.target.value) {
-      setErrors({...errors, username: 'Username is required.' });
+      setErrors({ ...errors, nombre: "El nombre de usuario es obligatorio." });
     } else {
-      setErrors({...errors, username: '' });
+      setErrors({ ...errors, nombre: "" });
     }
   };
 
-  // Función para manejar el cambio en el campo de contraseña
-  const handlePasswordChange = (event) => {
-    setPassword(event.target.value);
-    // Validación básica aquí, por ejemplo, verificar que la contraseña tenga al menos 8 caracteres
+  const handlePaswordChange = (event) => {
+    setPasword(event.target.value);
     if (event.target.value.length < 8) {
-      setErrors({...errors, password: 'Password must be at least 8 characters long.' });
+      setErrors({
+        ...errors,
+        pasword: "La contraseña debe tener al menos 8 caracteres.",
+      });
     } else {
-      setErrors({...errors, password: '' });
+      setErrors({ ...errors, pasword: "" });
     }
   };
 
-  // Función para manejar el envío del formulario
-  const handleSubmit = (event) => {
-    event.preventDefault(); // Evita el comportamiento predeterminado del formulario
-    // Aquí puedes agregar la lógica para enviar los datos al servidor
-    console.log('Submitting:', { username, password });
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    
+    if (nombre && pasword.length >= 8) {
+      try {
+
+        const response = await axios.post('http://localhost:5000/login', {
+          nombre,
+          pasword,
+        });
+
+        if (response.data.success) {
+          alert("Inicio de sesión exitoso");
+        } else {
+          alert(response.data.message || "Error al iniciar sesión");
+        }
+      } catch (error) {
+        console.error("Error al iniciar sesión:", error);
+        alert("Error al iniciar sesiónnnnnnnnnn");
+      }
+    } else {
+      alert("Por favor, complete todos los campos correctamente.");
+    }
   };
 
   return (
     <div>
-      <Header/>
+      <Header />
       <section>
         <div className={styles.contenedorLog}>
           <center>
             <h2 className={styles.login}>LOGIN</h2>
-            <form method="post" action="/login" onSubmit={handleSubmit}>
-              <label htmlFor="nombre">Username:</label><br />
-              <input type="text" id="nombre" name="email" value={username} onChange={handleUsernameChange} required /><br /><br />
-              <div className={styles.error}>{errors.username}</div>
-              <label htmlFor="password">Password:</label><br />
-              <input type="password" id="password" name="password" value={password} onChange={handlePasswordChange} required /><br /><br />
-              <div className={styles.error}>{errors.password}</div>
+            <form onSubmit={handleSubmit}>
+              <label htmlFor="nombre">Usuario:</label>
+              <br />
+              <input
+                type="text"
+                id="nombre"
+                name="nombre"
+                value={nombre}
+                onChange={handleNombreChange}
+                required
+              />
+              <br />
+              <br />
+              <div className={styles.error}>{errors.nombre}</div>
+              <label htmlFor="pasword">Pasword:</label>
+              <br />
+              <input
+                type="password"
+                id="pasword"
+                name="pasword"
+                value={pasword}
+                onChange={handlePaswordChange}
+                required
+              />
+              <br />
+              <br />
+              <div className={styles.error}>{errors.pasword}</div>
               <div className={styles.logButton}>
                 <input className={styles.boton} type="submit" value="Login" />
               </div>
               <div className={styles.createAccount}>
-                <Link to="/signin">Create an account</Link>
+                <Link to="/login/signin">Create an account</Link>
               </div>
             </form>
           </center>
         </div>
       </section>
-      <Footer/>
+      <Footer />
     </div>
   );
 };
