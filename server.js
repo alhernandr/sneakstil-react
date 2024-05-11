@@ -148,6 +148,72 @@ app.delete("/borrar-cliente/:id", (req, res) => {
   });
 });
 
+// Endpoint para obtener datos de la cesta
+app.get("/datos-cesta", (req, res) => {
+  connection.query("SELECT * FROM cesta", (err, results) => {
+    if (err) {
+      console.error("Error al realizar la consulta: ", err);
+      res.status(500).send("Error al obtener datos de la cesta");
+      return;
+    }
+    res.json(results);
+  });
+});
+
+// Endpoint para insertar datos en la cesta
+app.post("/insertar-datos-cesta", (req, res) => {
+  const { nombre, marca, precio, disponibilidad } = req.body;
+  const query =
+    "INSERT INTO cesta (nombre, marca, precio, disponibilidad) VALUES (?, ?, ?, ?)";
+  connection.query(
+    query,
+    [nombre, marca, precio, disponibilidad],
+    (err, results) => {
+      if (err) {
+        console.error("Error al insertar datos: ", err);
+        res.status(500).send("Error al insertar datos en la cesta");
+        return;
+      }
+      res.status(200).send("Datos insertados correctamente en la cesta");
+    }
+  );
+});
+
+// Endpoint para actualizar datos en la cesta
+app.put("/actualizar-datos-cesta/:id", (req, res) => {
+  const { id } = req.params;
+  const { nombre, marca, precio, disponibilidad } = req.body;
+  const query =
+    "UPDATE cesta SET nombre=?, marca=?, precio=?, disponibilidad=? WHERE id=?";
+  connection.query(
+    query,
+    [nombre, marca, precio, disponibilidad, id],
+    (err, results) => {
+      if (err) {
+        console.error("Error al actualizar datos: ", err);
+        res.status(500).send("Error al actualizar datos en la cesta");
+        return;
+      }
+      res.status(200).send("Datos actualizados correctamente en la cesta");
+    }
+  );
+});
+
+// Endpoint para borrar datos de la cesta
+app.delete("/borrar-datos-cesta/:id", (req, res) => {
+  const { id } = req.params;
+  const query = "DELETE FROM cesta WHERE id=?";
+  connection.query(query, [id], (err, results) => {
+    if (err) {
+      console.error("Error al borrar datos: ", err);
+      res.status(500).send("Error al borrar datos en la cesta");
+      return;
+    }
+    res.status(200).send("Datos borrados correctamente en la cesta");
+  });
+});
+
+// Endpoint para validar el login
 app.post("/login", (req, res) => {
   const { nombre, pasword } = req.body;
   const query = "SELECT * FROM clientes WHERE nombre = ? AND pasword = ?";
