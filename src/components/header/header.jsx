@@ -10,7 +10,7 @@ const Header = () => {
       element.scrollIntoView({ behavior: 'smooth' });
     }
   };
-
+  
   return (
     <div>
       <header className={styles.lHeader} id="header">
@@ -54,7 +54,7 @@ const Header = () => {
                 </Link>
               </li>
               <li className={styles.nav__item}>
-                <Link to="/cesta" className={styles.navLink}>
+                <Link to="/basket" className={styles.navLink}>
                   🛒
                 </Link>
               </li>
