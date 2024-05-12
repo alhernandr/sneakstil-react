@@ -84,7 +84,6 @@ const Basket = () => {
         <br></br>
         <thead>
           <tr>
-            <td>Imagen</td>
             <td>Nombre</td>
             <td>Marca</td>
             <td>Precio</td>
@@ -95,7 +94,6 @@ const Basket = () => {
         <tbody>
           {datos.map((dato) => (
             <tr key={dato.id}>
-              <td>{dato.imagen}</td>
               <td>{dato.nombre}</td>
               <td>{dato.marca}</td>
               <td>{dato.precio}</td>
@@ -112,8 +110,8 @@ const Basket = () => {
         <br></br>
         <br></br>
         <Button href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" className={styles.botonVerde}>
-  Continuar Al Pago
-</Button>
+          Continuar Al Pago
+        </Button>
 
         <Footer />
       </div>

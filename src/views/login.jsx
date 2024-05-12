@@ -17,6 +17,7 @@ import axios from "axios";
 import styles from "../css/styles.module.css";
 import Header from "../components/header/header";
 import Footer from "../components/footer/footer";
+import { Button } from "react-bootstrap";
 
 /**
  * Componente funcional que representa el formulario de inicio de sesión.
@@ -136,8 +137,9 @@ const Login = () => {
               <br />
               <div className={styles.error}>{errors.pasword}</div>
               <div className={styles.logButton}>
-                <input className={styles.boton} type="submit" value="Login" />
+                <Button href="/" className={styles.boton} type="submit" value="Login" >Login</Button>
               </div>
+              <br />
               <div className={styles.createAccount}>
                 <Link to="/login/signin">Create an account</Link>
               </div>

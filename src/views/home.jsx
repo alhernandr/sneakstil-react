@@ -7,6 +7,8 @@
  * @requires Header
  * @requires Footer
  */
+import React from 'react'
+import { Link } from 'react-router-dom'
 
 import styles from '../css/styles.module.css'
 import imgHome from '../img/imghome.png'

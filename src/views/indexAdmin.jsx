@@ -73,7 +73,6 @@ const IndexAdmin = () => {
 
         <thead>
           <tr>
-            <td>Imagen</td>
             <td>Nombre</td>
             <td>Marca</td>
             <td>Precio</td>
@@ -84,7 +83,6 @@ const IndexAdmin = () => {
         <tbody>
           {datos.map((dato) => (
             <tr key={dato.id}>
-              <td><img src={`http://localhost:5000/imagen/${dato.imagen}`} alt={dato.imagen}/></td>
               <td>{dato.nombre}</td>
               <td>{dato.marca}</td>
               <td>{dato.precio}</td>
