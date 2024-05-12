@@ -4,6 +4,12 @@ import styles from "../../css/styles.module.css"; // Asegúrate de que la ruta s
 
 import logo from "../../img/logo.png"
 const Footer = () => {
+    const scrollToSection = (sectionId) => {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    };
   return (
     <div>
       <section className={`${styles.footer} ${styles.section}`}>
@@ -28,22 +34,22 @@ const Footer = () => {
 
             <ul>
               <li>
-                <Link to="/home" className={styles.footer__link}>
+                <Link to="/" className={styles.footer__link}>
                   Home
                 </Link>
               </li>
-              <li>
-                <Link to="/featured" className={styles.footer__link}>
+              <li className={styles.footer__link}>
+                <Link to="/#" onClick={() => scrollToSection('featured')}>
                   Featured
                 </Link>
               </li>
-              <li>
-                <Link to="/women" className={styles.footer__link}>
+              <li className={styles.footer__link}>
+                <Link to="/#" onClick={() => scrollToSection('women')}>
                   Women
                 </Link>
               </li>
-              <li>
-                <Link to="/new" className={styles.footer__link}>
+              <li className={styles.footer__link}>
+                <Link to="/#" onClick={() => scrollToSection('new')}>
                   New
                 </Link>
               </li>

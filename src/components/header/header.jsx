@@ -2,6 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styles from "../../css/styles.module.css";
 import logo from "../../img/logo.png";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
 const Header = () => {
   const scrollToSection = (sectionId) => {
@@ -19,7 +22,7 @@ const Header = () => {
             <i className="bx bxs-grid"></i>
           </div>
           <Link to="/" className={styles.nav__logo} onClick={() => scrollToSection('home')}>
-            <img className={styles.logo} src={logo} alt="" />
+            <img className={styles.logoHome} src={logo} alt="" />
           </Link>
           <div className={styles.nav__menu} id="nav-menu">
             <ul className={styles.nav__list}>
@@ -48,11 +51,25 @@ const Header = () => {
                   Shop
                 </Link>
               </li>
+              <li className={styles.nav__item}>
+                <Link to="/login" className={styles.navLink}>
+                  <FontAwesomeIcon icon={faUser} />
+                </Link>
+              </li>
+              <li className={styles.nav__item}>
+                <Link to="/basket" className={styles.navLink}>
+                  <FontAwesomeIcon icon={faShoppingCart} />
+                </Link>
+              </li>
             </ul>
           </div>
+
+         
+          <a href="/login"><i class="bx bx-user"></i></a>
+        
           <div className={styles.nav__shop}>
             <Link to="/basket">
-              <i className="bx bx-shopping-bag"></i>
+              <i  className="bx bx-shopping-bag"></i>
             </Link>
           </div>
         </nav>

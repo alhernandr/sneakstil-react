@@ -5,7 +5,7 @@ import styles from '../css/styles.module.css'
 import imgHome from '../img/imghome.png'
 import jordan1 from '../img/Jordan 1 Retro High OG SP Travis Scott Mocha.png'
 import jordan2 from '../img/Jordan 4 Retro Military Black.png'
-import jordan3 from '../img/Jordan 3 Retro SP A Ma Maniére.png'
+import jordan3 from '../img/air-jordan-3-retro-sp-j-balvin-removebg-preview.png'
 import zapatilla1 from '../img/0280418168e64ee1339cd6c011e79ebd-removebg-preview.png'
 import zapatilla2 from '../img/76aba495949b8a4392da6ce5ae3f3582-removebg-preview.png'
 import jordan4 from '../img/Jordan 4 Retro Canyon Purple.png'
@@ -60,11 +60,12 @@ const home = () => {
         <span className={styles.sneaker__preci}>546€</span>
         <Link to="/shop" className={styles.buttonLight}>Add to Cart <i className="bx bx-right-arrow-alt button-icon"></i></Link>{/*ARREGLAR CON LA UNION DE VARIAS CLASES*/}
       </article>
+
       {/* <!-- Producto destacado 3 --> */}
       <article className={styles.sneaker}>
-        <img src={jordan3} alt="" className={styles.sneaker__img} id="jrd3" />
-        <span className={styles.sneaker__name} id="jrd3">Jordan 3 Retro SP A Ma Maniére</span>
-        <span className={styles.sneaker__preci}>461€</span>
+        <img src={jordan3} alt="" className={styles.sneaker__img} />
+        <span className={styles.sneaker__name}>Jordan 3 Retro SP J Balvin Medellín Sunset</span>
+        <span className={styles.sneaker__preci}>582€</span>
         <Link to="/shop" className={styles.buttonLight}>Add to Cart <i className="bx bx-right-arrow-alt button-icon"></i></Link>{/*ARREGLAR CON LA UNION DE VARIAS CLASES*/}
       </article>
     </div>
@@ -89,7 +90,7 @@ const home = () => {
           <p className={styles.collection__description}>New collection 2023</p>
           <Link to="/shop" className={styles.buttonLight}>Buy Now <i className="bx bx-right-arrow-alt button-icon"></i></Link>{/*ARREGLAR CON LA UNION DE VARIAS CLASES*/}
         </div>
-        <img src={zapatilla2} alt="" className={styles.collection__img} id="wmns"/>
+        <img src={zapatilla2} alt="" className={styles.collection__img_womens} id="wmns"/>
       </div>
     </div>
   </section>

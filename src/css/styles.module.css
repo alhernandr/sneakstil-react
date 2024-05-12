@@ -18,12 +18,13 @@ html {
 }
 
 body {
-  margin: 3rem 0 0 0;
+  margin: 3rem;
   font-family: "Poppins", sans-serif;
   font-size: 0.938rem;
   font-weight: 500;
   color: #141414;
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
 h1,
@@ -152,13 +153,18 @@ img {
 }
 
 .nav__logo {
-  max-width: 50px;
+  width: 3rem;
+  margin-right: -8rem;
 }
 
 .nav__toggled,
 .nav__shop {
   font-size: 1.3rem;
   cursor: pointer;
+}
+
+.section__title{
+  margin-top: 3rem;
 }
 
 .nav_user{
@@ -250,6 +256,29 @@ img {
   border-top: 20px solid #000;
 }
 
+
+/*==== SECTION TITLE SHOP ====*/
+.section__title {
+  position: relative;
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  letter-spacing: 0.1rem;
+  margin-top: 4rem;
+}
+
+.section__title::after {
+  content: "";
+  position: absolute;
+  width: 56px;
+  height: 0.18rem;
+  top: -1rem;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background-color: #141414;
+}
+
 /*===== FEATURED =====*/
 .featured__container {
   row-gap: 2rem;
@@ -315,11 +344,6 @@ img {
   color: #fff;
 }
 
-#jrd3{
-  width: 100%;
-  margin-top: 2rem;
-}
-
 #dnk{
   margin-top: -3rem;
 }
@@ -377,8 +401,11 @@ img {
   width: 230px;
 }
 
-#wmns{
-  top: -63px;
+.collection__img_womens{
+  position: absolute;
+  top: -17px;
+  right: 0;
+  width: 230px;
 }
 
 .collection__name {
@@ -553,8 +580,8 @@ img {
   margin-bottom: 2rem;
 }
 
-#footer_logo{
-  max-width: 101px;
+.logo{
+  width: 6rem;
 }
 
 .footer__title {
@@ -620,6 +647,7 @@ img {
   .home__img{
     width: 31%;
   }
+
   
 
 }
@@ -632,7 +660,7 @@ img {
     padding: 3rem 0.3rem;
   }
 
-  .sectionTitle::after {
+  .section__title::after {
     width: 76px;
   }
 
@@ -661,6 +689,10 @@ img {
   .nav_logout{
     font-size: 1rem;
     
+  }
+
+  .nav__logo {
+    width: 3rem;
   }
 
 
@@ -755,26 +787,118 @@ img {
   box-shadow: 0px 0px 12px 10px rgba(59,59,59,0.41);
   -webkit-box-shadow: 0px 0px 12px 10px rgba(59,59,59,0.41);
   -moz-box-shadow: 0px 0px 12px 10px rgba(59,59,59,0.41);
-  }
+}
+
+.login{
+  padding: 2rem;
+}
+
+.log_button{
+  padding-top: 0.7rem;
+}
+
+hr.solid {
+  border-top: 3px solid #989797;
+}
+
+.log_button_google, 
+.log_button_facebook{
+  padding: 0.5rem;
   
-  .login{
-    padding: 2rem;
-  }
+}
+.boton{
+text-decoration:none;
+font-weight: 600;
+font-size: 20px;
+color:#000000;
+padding-top:15px;
+padding-bottom:15px;
+padding-left:40px;
+padding-right:40px;
+background-color: transparent;
+border-width: 3px;
+border-style: solid;
+border-color: #000000;
+}
+
+.createaccount{
+  font-size: 15px;
+  opacity: 45%;
+  text-decoration-line: underline;
+}
+.contenedor_crear{
+  display: flex;
+  flex-direction: column;
+}
+.botones_crear{
+  padding: 2rem;
+}
+
+.formulario{
+  display: flex;
+  flex-direction: column;
+}
+
+table{
+  margin: 0rem;
+  border: 3px solid black;
+  display: flex;
+  margin-right: 40rem;
+}
+
+.operaciones{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  border:none;
+}
+.botonBorrar{
   
-  .log_button{
-    padding-top: 0.7rem;
-  }
+  width: 5rem;
   
-  hr.solid {
-    border-top: 3px solid #989797;
-  }
+  margin-top: 2rem;
+}
+.botonActualizar{
   
-  .log_button_google, 
-  .log_button_facebook{
-    padding: 0.5rem;
-    
-  }
-  .boton{
+  width: 10rem;
+  
+  margin-bottom: 2rem;
+}
+
+td{
+  text-align: center;
+  border: 2.5px solid black;
+  margin:1rem;
+}
+
+img{
+  width: 250px;
+}
+
+.contenedor{
+  margin-top: 10rem;
+  margin-left: 7rem;
+  margin-right:5rem;
+}
+
+.logoAdmin{
+  height: 700px;
+  padding: 7rem;
+  margin-top: -32.5rem;
+  margin-left: 50rem;
+}
+.logoGrande{
+  min-width: 600px;
+  
+  opacity: 33%;
+}
+
+.seccion{
+  margin-top: 10rem;
+  margin-right: 50rem;
+} 
+
+.boton_crear{
   text-decoration:none;
   font-weight: 600;
   font-size: 20px;
@@ -788,100 +912,9 @@ img {
   border-style: solid;
   border-color: #000000;
   }
-  
-  .createaccount{
-    font-size: 15px;
-    opacity: 45%;
-    text-decoration-line: underline;
-  }
-  .contenedor_crear{
-    display: flex;
-    flex-direction: column;
-  }
-  .botones_crear{
-    padding: 2rem;
-  }
+.contenedorAdmin{
+  margin-top: 3rem;
+  margin-left: 7rem;
+  margin-right:5rem;
+}
 
-  .formulario{
-    display: flex;
-    flex-direction: column;
-  }
-
-  table{
-    margin: 0rem;
-    border: 3px solid black;
-    display: flex;
-    margin-right: 40rem;
-  }
-
-  .operaciones{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    border:none;
-  }
-  .botonBorrar{
-    
-    width: 5rem;
-    
-    margin-top: 2rem;
-  }
-  .botonActualizar{
-    
-    width: 10rem;
-    
-    margin-bottom: 2rem;
-  }
-
-  td{
-    text-align: center;
-    border: 2.5px solid black;
-    margin:1rem;
-  }
-
-  img{
-    width: 250px;
-  }
-
-  .contenedor{
-    margin-top: 10rem;
-    margin-left: 7rem;
-    margin-right:5rem;
-  }
-
-  .logoAdmin{
-    height: 700px;
-    padding: 7rem;
-    margin-top: -32.5rem;
-    margin-left: 50rem;
-  }
-  .logoGrande{
-    min-width: 600px;
-    
-    opacity: 33%;
-  }
-
-  .seccion{
-    margin-top: 10rem;
-    margin-right: 50rem;
-  } 
-
-  .boton_crear{
-    text-decoration:none;
-    font-weight: 600;
-    font-size: 20px;
-    color:#000000;
-    padding-top:15px;
-    padding-bottom:15px;
-    padding-left:40px;
-    padding-right:40px;
-    background-color: transparent;
-    border-width: 3px;
-    border-style: solid;
-    border-color: #000000;
-    }
-  .contenedorAdmin{
-    margin-top: 3rem;
-    margin-left: 7rem;
-    margin-right:5rem;
-  }
