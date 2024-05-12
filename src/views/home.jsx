@@ -1,5 +1,12 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+/**
+ * @fileoverview Componente de React para la página de inicio.
+ * @module Home
+ * @requires React
+ * @requires Link
+ * @requires styles
+ * @requires Header
+ * @requires Footer
+ */
 
 import styles from '../css/styles.module.css'
 import imgHome from '../img/imghome.png'
@@ -17,15 +24,20 @@ import zapatilla4 from '../img/new1.png'
 import zapatilla5 from '../img/1 (1).png'
 import jordan7 from '../img/jordan-2-retro-low-sp-off-white-white-red-2-removebg-preview.png'
 
-import Header from '../components/header/header'
-import Footer from '../components/footer/footer'
+import Header from '../components/header/header';
+import Footer from '../components/footer/footer';
 
+/**
+ * Componente funcional que representa la página de inicio.
+ * @function Home
+ * @returns {JSX.Element} Elemento JSX que representa la página de inicio.
+ */
 const home = () => {
   return (
 <div>
   <Header/>
   <section className={styles.home} id="home">
-    <div className={`${styles.home__container} ${styles. bdGrid}`}>
+    <div className={`${styles.home__container} ${styles.bdGrid}`}>
       {/* <!-- Sneaker --> */}
       <div className={styles.home__sneaker}>
         <div className={styles.home__shape}></div>

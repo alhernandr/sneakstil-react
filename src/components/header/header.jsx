@@ -13,7 +13,7 @@ const Header = () => {
       element.scrollIntoView({ behavior: 'smooth' });
     }
   };
-
+  
   return (
     <div>
       <header className={styles.lHeader} id="header">
