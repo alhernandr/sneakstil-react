@@ -1,21 +1,79 @@
+/**
+ * @fileoverview Componente de React para la página de actualización de productos.
+ * @module Actualizar
+ * @requires React
+ * @requires useState
+ * @requires useParams
+ * @requires useNavigate
+ * @requires styles
+ * @requires axios
+ * @requires Header
+ * @requires Footer
+ * @requires logo
+ */
+
 import React, { useState } from 'react';
-import { useParams,  useNavigate} from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import styles from '../css/styles.module.css';
 import axios from "axios";
 import logo from '../img/logo.png';
 import Header from '../components/header/header';
 import Footer from '../components/footer/footer';
 
+/**
+ * Componente funcional para la página de actualización de productos.
+ * @function Actualizar
+ * @returns {JSX.Element} Componente de React que muestra el formulario de actualización de productos.
+ */
 const Actualizar = () => {
+  /**
+   * Hook de enrutamiento para obtener el parámetro de ID de la URL.
+   * @type {Object}
+   */
   const { id } = useParams();
+
+  /**
+   * Estado local para el nombre del producto.
+   * @type {string}
+   */
   const [nombre, setNombre] = useState('');
+
+  /**
+   * Estado local para la marca del producto.
+   * @type {string}
+   */
   const [marca, setMarca] = useState('');
+
+  /**
+   * Estado local para la imagen del producto.
+   * @type {string}
+   */
   const [imagen, setImagen] = useState('');
+
+  /**
+   * Estado local para el precio del producto.
+   * @type {string}
+   */
   const [precio, setPrecio] = useState('');
+
+  /**
+   * Estado local para la disponibilidad del producto.
+   * @type {string}
+   */
   const [disponibilidad, setDisponibilidad] = useState('');
 
+  /**
+   * Hook de enrutamiento para la navegación entre páginas.
+   * @type {function}
+   */
   const navigate = useNavigate();
 
+  /**
+   * Función para manejar el envío del formulario de actualización de datos.
+   * @function
+   * @name handleSubmit
+   * @param {Event} e - Objeto de evento del formulario.
+   */
   const handleSubmit = async (e) => {
     e.preventDefault();
     const data = {
@@ -36,8 +94,6 @@ const Actualizar = () => {
       alert('Error al actualizar datos');
     }
   };
-
-
   return (
     <div>
       <Header />

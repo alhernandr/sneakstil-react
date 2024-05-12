@@ -1,31 +1,46 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+/**
+ * @fileoverview Componente de React para la página de inicio.
+ * @module Home
+ * @requires React
+ * @requires Link
+ * @requires styles
+ * @requires Header
+ * @requires Footer
+ */
 
-import styles from '../css/styles.module.css'
-import imgHome from '../img/imghome.png'
-import jordan1 from '../img/Jordan 1 Retro High OG SP Travis Scott Mocha.png'
-import jordan2 from '../img/Jordan 4 Retro Military Black.png'
-import jordan3 from '../img/Jordan 3 Retro SP A Ma Maniére.png'
-import zapatilla1 from '../img/0280418168e64ee1339cd6c011e79ebd-removebg-preview.png'
-import zapatilla2 from '../img/76aba495949b8a4392da6ce5ae3f3582-removebg-preview.png'
-import jordan4 from '../img/Jordan 4 Retro Canyon Purple.png'
-import jordan9 from '../img/Jordan 4 Frozen Moments.png'
-import jordan5 from '../img/Jordan 11 Retro Midnight Navy.png'
-import jordan6 from '../img/Jordan 1 Mid SE Fearless Melody Ehsani.png'
-import zapatilla3 from '../img/536656ebed743b8b607a473303352cf5-removebg-preview.png'
-import zapatilla4 from '../img/new1.png'
-import zapatilla5 from '../img/1 (1).png'
-import jordan7 from '../img/jordan-2-retro-low-sp-off-white-white-red-2-removebg-preview.png'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-import Header from '../components/header/header'
-import Footer from '../components/footer/footer'
+import styles from '../css/styles.module.css';
+import imgHome from '../img/imghome.png';
+import jordan1 from '../img/Jordan 1 Retro High OG SP Travis Scott Mocha.png';
+import jordan2 from '../img/Jordan 4 Retro Military Black.png';
+import jordan3 from '../img/Jordan 3 Retro SP A Ma Maniére.png';
+import zapatilla1 from '../img/0280418168e64ee1339cd6c011e79ebd-removebg-preview.png';
+import zapatilla2 from '../img/76aba495949b8a4392da6ce5ae3f3582-removebg-preview.png';
+import jordan4 from '../img/Jordan 4 Retro Canyon Purple.png';
+import jordan9 from '../img/Jordan 4 Frozen Moments.png';
+import jordan5 from '../img/Jordan 11 Retro Midnight Navy.png';
+import jordan6 from '../img/Jordan 1 Mid SE Fearless Melody Ehsani.png';
+import zapatilla3 from '../img/536656ebed743b8b607a473303352cf5-removebg-preview.png';
+import zapatilla4 from '../img/new1.png';
+import zapatilla5 from '../img/1 (1).png';
+import jordan7 from '../img/jordan-2-retro-low-sp-off-white-white-red-2-removebg-preview.png';
 
+import Header from '../components/header/header';
+import Footer from '../components/footer/footer';
+
+/**
+ * Componente funcional que representa la página de inicio.
+ * @function Home
+ * @returns {JSX.Element} Elemento JSX que representa la página de inicio.
+ */
 const home = () => {
   return (
 <div>
   <Header/>
   <section className={styles.home} id="home">
-    <div className={`${styles.home__container} ${styles. bdGrid}`}>
+    <div className={`${styles.home__container} ${styles.bdGrid}`}>
       {/* <!-- Sneaker --> */}
       <div className={styles.home__sneaker}>
         <div className={styles.home__shape}></div>

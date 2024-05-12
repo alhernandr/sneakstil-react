@@ -1,13 +1,29 @@
+/**
+ * @fileoverview Componente de React para el formulario de registro.
+ * @module SignIn
+ * @requires React
+ * @requires useState
+ * @requires styles
+ * @requires Link
+ * @requires useNavigate
+ * @requires axios
+ * @requires Header
+ * @requires Footer
+ */
+
 import React, { useState } from 'react';
 import styles from '../css/styles.module.css';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import axios from "axios";
-import bcrypt from 'bcryptjs';
-
 import Header from '../components/header/header'
 import Footer from '../components/footer/footer'
 
+/**
+ * Componente funcional que representa el formulario de registro.
+ * @function SignIn
+ * @returns {JSX.Element} Elemento JSX que representa el formulario de registro.
+ */
 const SignIn = () => {
   const [nombre, setNombre] = useState('');
   const [email, setEmail] = useState('');
@@ -16,16 +32,22 @@ const SignIn = () => {
 
   const navigate = useNavigate();
 
+  /**
+   * Función para manejar el envío del formulario de registro.
+   * @async
+   * @function handleSubmit
+   * @param {Event} e - Evento del formulario.
+   */
   const handleSubmit = async (e) => {
     e.preventDefault();
   
     // Hashear la contraseña
-    const hashedPassword = await bcrypt.hash(pasword, 10); 
-
+    // const hashedPassword = await bcrypt.hash(pasword, 10); 
+    
     const data = {
       nombre,
       email,
-      pasword: hashedPassword, 
+      pasword, //:hashedPassword
     };
     try {
       await axios.post('http://localhost:5000/insertar-cliente', data);
@@ -37,7 +59,11 @@ const SignIn = () => {
     }
   };
 
-  // Función para manejar el cambio en el campo de nombre de usuario
+  /**
+   * Función para manejar el cambio en el campo de nombre de usuario.
+   * @function handleNombreChange
+   * @param {Event} event - Evento del campo de nombre de usuario.
+   */
   const handleNombreChange = (event) => {
     setNombre(event.target.value);
     // Validación básica aquí, por ejemplo, verificar que el nombre de usuario no esté vacío
@@ -48,7 +74,11 @@ const SignIn = () => {
     }
   };
 
-  // Función para manejar el cambio en el campo de contraseña
+  /**
+   * Función para manejar el cambio en el campo de contraseña.
+   * @function handlePasswordChange
+   * @param {Event} event - Evento del campo de contraseña.
+   */
   const handlePasswordChange = (event) => {
     setPasword(event.target.value);
     // Validación básica aquí, por ejemplo, verificar que la contraseña tenga al menos 8 caracteres
@@ -59,7 +89,11 @@ const SignIn = () => {
     }
   };
 
-  // Función para manejar el cambio en el campo de correo electrónico
+  /**
+   * Función para manejar el cambio en el campo de correo electrónico.
+   * @function handleEmailChange
+   * @param {Event} event - Evento del campo de correo electrónico.
+   */
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
     // Expresión regular para validar el formato del correo electrónico

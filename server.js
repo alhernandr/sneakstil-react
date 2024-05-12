@@ -2,6 +2,7 @@
 const express = require("express");
 const mysql = require("mysql");
 const cors = require("cors");
+const bcrypt = require("bcryptjs");
 
 // Crea una instancia de Express
 const app = express();
@@ -216,6 +217,7 @@ app.delete("/borrar-datos-cesta/:id", (req, res) => {
 // Endpoint para validar el login
 app.post("/login", (req, res) => {
   const { nombre, pasword } = req.body;
+  
   const query = "SELECT * FROM clientes WHERE nombre = ? AND pasword = ?";
   connection.query(query, [nombre, pasword], (err, results) => {
     if (err) {

@@ -1,5 +1,14 @@
+/**
+ * @fileoverview Componente de React para la página de tienda.
+ * @module Shop
+ * @requires React
+ * @requires axios
+ * @requires Header
+ * @requires Footer
+ * @requires styles
+ */
+
 import React from 'react';
-import { Link } from 'react-router-dom'
 import axios from "axios";
 
 import Header from '../components/header/header'
@@ -18,7 +27,21 @@ import jordan9 from '../img/Nike SB Dunk Low Concepts Purple Lobster.png'
 import jordan10 from '../img/Adidas Yeezy Foam RNR Onyx.png'
 import jordan11 from '../img/Jordan 1 Retro Low OG SP Fragment x Travis Scott.png'
 
+/**
+ * Componente funcional que representa la página de tienda.
+ * @function Shop
+ * @returns {JSX.Element} Elemento JSX que representa la página de tienda.
+ */
 const Shop = () => {
+  /**
+   * Función asíncrona para agregar un producto al carrito de compras.
+   * @async
+   * @function addToBasket
+   * @param {string} nombre - Nombre del producto.
+   * @param {string} marca - Marca del producto.
+   * @param {number} precio - Precio del producto.
+   * @param {boolean} disponibilidad - Disponibilidad del producto.
+   */
   const addToBasket = async (nombre, marca, precio, disponibilidad) => {
     try {
       await axios.post('http://localhost:5000/insertar-datos-cesta', {

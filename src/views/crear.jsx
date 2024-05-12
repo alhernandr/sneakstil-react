@@ -1,9 +1,25 @@
+/**
+ * @fileoverview Componente de React para la creación de productos.
+ * @module Crear
+ * @requires React
+ * @requires useState
+ * @requires styles
+ * @requires axios
+ * @requires useNavigate
+ * @requires logo
+ */
+
 import React, { useState } from 'react';
 import styles from '../css/styles.module.css';
 import axios from "axios";
 import { useNavigate } from 'react-router-dom';
 import logo from '../img/logo.png';
 
+/**
+ * Componente funcional para crear un nuevo producto.
+ * @function Crear
+ * @returns {JSX.Element} Elemento JSX que representa el formulario de creación de producto.
+ */
 const Crear = () => {
   const [nombre, setNombre] = useState('');
   const [marca, setMarca] = useState('');
@@ -13,6 +29,11 @@ const Crear = () => {
 
   const navigate = useNavigate();
 
+  /**
+   * Maneja el envío del formulario de creación de producto.
+   * @function handleSubmit
+   * @param {Event} e - Evento de formulario.
+   */
   const handleSubmit = async (e) => {
     e.preventDefault();
   
@@ -32,7 +53,6 @@ const Crear = () => {
       alert('Error al insertar datos');
     }
   };
-
   return (
     <div>
       <main className={`${styles.contenedor} ${styles.seccion}`}>
@@ -47,7 +67,7 @@ const Crear = () => {
           <input type="text" name="marca" id="marca" value={marca} onChange={(e) => setMarca(e.target.value)} />
 
           <label htmlFor="imagen">Imagen:</label>
-          <input type="file" name="imagen" id="imagen" accept="image/jpeg, image/png, image/jpg" onChange={(e) => setImagen(e.target.files[0])} />
+          <input type="file" name="imagen" id="imagen" value={imagen} accept="image/jpeg, image/png, image/jpg" onChange={(e) => setImagen(e.target.files[0])} />
 
           <label htmlFor="precio">Precio:</label>
           <input type="text" name="precio" id="precio" value={precio} onChange={(e) => setPrecio(e.target.value)} />

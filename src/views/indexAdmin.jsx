@@ -1,3 +1,17 @@
+/**
+ * @fileoverview Componente de React para la página de administrador.
+ * @module IndexAdmin
+ * @requires React
+ * @requires useEffect
+ * @requires useState
+ * @requires axios
+ * @requires Link
+ * @requires styles
+ * @requires Button
+ * @requires Header
+ * @requires Footer
+ */
+
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
@@ -6,9 +20,17 @@ import { Button } from "react-bootstrap";
 import Header from "../components/header/header";
 import Footer from "../components/footer/footer";
 
+/**
+ * Componente funcional que representa la página de administrador.
+ * @function IndexAdmin
+ * @returns {JSX.Element} Elemento JSX que representa la página de administrador.
+ */
 const IndexAdmin = () => {
   const [datos, setDatos] = useState([]);
 
+  /**
+   * Hook useEffect para obtener los datos del servidor al cargar la página.
+   */
   useEffect(() => {
     axios
       .get("http://localhost:5000/datos") 
@@ -20,6 +42,12 @@ const IndexAdmin = () => {
       });
   }, []);
 
+  /**
+   * Función para manejar la eliminación de un dato.
+   * @async
+   * @function handleDelete
+   * @param {number} id - ID del dato a eliminar.
+   */
   const handleDelete = async (id) => {
     try {
       await axios.delete(`http://localhost:5000/borrar-datos/${id}`);
@@ -30,6 +58,7 @@ const IndexAdmin = () => {
       alert('Error al eliminar el producto');
     }
   };
+
 
   return (
     <div>
