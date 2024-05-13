@@ -18,6 +18,7 @@ import styles from "../css/styles.module.css";
 import Header from "../components/header/header";
 import Footer from "../components/footer/footer";
 import { Button } from "react-bootstrap";
+import Cookies from 'js-cookie';
 
 /**
  * Componente funcional que representa el formulario de inicio de sesión.
@@ -62,10 +63,10 @@ const Login = () => {
    */
   const handlePaswordChange = (event) => {
     setPasword(event.target.value);
-    if (event.target.value.length < 8) {
+    if (event.target.value.length < 5) {
       setErrors({
         ...errors,
-        pasword: "La contraseña debe tener al menos 8 caracteres.",
+        pasword: "La contraseña debe tener al menos 5 caracteres.",
       });
     } else {
       setErrors({ ...errors, pasword: "" });
@@ -82,7 +83,7 @@ const navigate = useNavigate();
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    if (nombre && pasword.length >= 8) {
+    if (nombre && pasword.length >= 5) {
       try {
         const response = await axios.post('http://localhost:5000/login', {
           nombre,
@@ -91,13 +92,15 @@ const navigate = useNavigate();
 
         if (response.data.success) {
           alert("Inicio de sesión exitoso");
+          Cookies.set('token', response.data.token); // Guarda el token de sesión en una cookie llamada 'token'
           navigate("/");
+        
         } else {
           alert(response.data.message || "Error al iniciar sesión");
         }
       } catch (error) {
         console.error("Error al iniciar sesión:", error);
-        alert("Error al iniciar sesiónnnnnnnnnnnnnnnnnnnnnnnnn");
+        alert("Error al iniciar sesión");
       }
     } else {
       alert("Por favor, complete todos los campos correctamente.");
@@ -113,7 +116,7 @@ const navigate = useNavigate();
           <form >
             <input
               type="text"
-              placeholder="Email"
+              placeholder="Username"
               id="nombre"
               name="nombre"
               value={nombre}

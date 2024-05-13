@@ -8,12 +8,11 @@
  * @requires styles
  */
 
-import React from 'react';
-import axios from "axios";
-
+import React,{useState, useEffect} from 'react';
+import axios from 'axios';
+import Cookies from 'js-cookie';
 import Header from '../components/header/header'
 import Footer from '../components/footer/footer'
-
 import styles from '../css/styles.module.css';
 import jordan1 from '../img/Jordan 1 Retro High OG SP Travis Scott Mocha.png'
 import jordan2 from '../img/Jordan 4 Retro Military Black.png'
@@ -33,29 +32,36 @@ import jordan11 from '../img/Jordan 1 Retro Low OG SP Fragment x Travis Scott.pn
  * @returns {JSX.Element} Elemento JSX que representa la página de tienda.
  */
 const Shop = () => {
-  /**
-   * Función asíncrona para agregar un producto al carrito de compras.
-   * @async
-   * @function addToBasket
-   * @param {string} nombre - Nombre del producto.
-   * @param {string} marca - Marca del producto.
-   * @param {number} precio - Precio del producto.
-   * @param {boolean} disponibilidad - Disponibilidad del producto.
-   */
-  const addToBasket = async (nombre, marca, precio, disponibilidad) => {
-    try {
-      await axios.post('http://localhost:5000/insertar-datos-cesta', {
-        nombre,
-        marca,
-        precio,
-        disponibilidad,
-      });
-      alert('Producto añadido a la cesta correctamente');
-    } catch (error) {
-      console.error('Error al añadir producto a la cesta: ', error);
-      alert('Error al añadir producto a la cesta');
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    const token = Cookies.get('token');
+    if (token) {
+      setIsLoggedIn(true);
     }
+  }, []);
+  const [basketProducts, setBasketProducts] = useState([]);
+  const addToBasket = async (product) => {
+    if (!isLoggedIn) {
+      alert('Debes iniciar sesión para agregar productos a la cesta.');
+      return;
+    }
+  
+    const productsFromCookie = Cookies.get("basketProducts");
+    let updatedBasket = [];
+    if (productsFromCookie) {
+      updatedBasket = JSON.parse(productsFromCookie);
+    }
+  
+    updatedBasket.push(product);
+  
+    setBasketProducts(updatedBasket);
+  
+    Cookies.set('basketProducts', JSON.stringify(updatedBasket));
+  
+    alert('Producto agregado a la cesta.');
   };
+  
   return (
     <div>
       <Header/>
@@ -68,77 +74,77 @@ const Shop = () => {
             <img src={jordan1} alt="" className={styles.sneaker__img} />
             <span className={styles.sneaker__name}>Jordan 1 Retro High OG SP Travis Scott Mocha</span>
             <span className={styles.sneaker__precio}>1.366€</span>
-            <button className={styles.buttonLight} onClick={() => addToBasket('Jordan 1 Retro High OG SP Travis Scott Mocha', 'Jordan', 1366, true)}>Add to basket <i className="bx bx-right-arrow-alt button-icon"></i></button>
+            <button className={styles.buttonLight} onClick={() => addToBasket({ id: 1, nombre: 'Jordan 1 Retro High OG SP Travis Scott Mocha', precio: 1366 })}>Add to basket <i className="bx bx-right-arrow-alt button-icon"></i></button>
           </article>
           
           <article className={styles.sneaker}>
             <img src={jordan2} alt="" className={styles.sneaker__img} />
             <span className={styles.sneaker__name}>Jordan 4 Retro Military Black</span>
             <span className={styles.sneaker__precio}>546€</span>
-            <button className={styles.buttonLight} onClick={() => addToBasket('Jordan 4 Retro Military Black', 'Jordan', 546, true)}>Add to basket <i className="bx bx-right-arrow-alt button-icon"></i></button>
+            <button className={styles.buttonLight} onClick={() => addToBasket({ id: 2, nombre: 'Jordan 4 Retro Military Black', precio: 546 })}>Add to basket <i className="bx bx-right-arrow-alt button-icon"></i></button>
           </article>
 
           <article className={styles.sneaker}>
             <img src={jordan3} alt="" className={styles.sneaker__img} />
             <span className={styles.sneaker__name}>Jordan 3 Retro SP A Ma Maniére</span>
             <span className={styles.sneaker__precio}>461€</span>
-            <button className={styles.buttonLight} onClick={() => addToBasket('Jordan 3 Retro SP A Ma Maniére', 'Jordan', 461, true)}>Add to basket <i className="bx bx-right-arrow-alt button-icon"></i></button>
+            <button className={styles.buttonLight} onClick={() => addToBasket({ id: 3, nombre: 'Jordan 3 Retro SP A Ma Maniére', precio: 461 })}>Add to basket <i className="bx bx-right-arrow-alt button-icon"></i></button>
           </article>
 
           <article className={styles.sneaker}>
             <img src={jordan4} alt="" className={styles.sneaker__img} />
             <span className={styles.sneaker__name}>Jordan 4 Retro Canyon Purple</span>
             <span className={styles.sneaker__precio}>289€</span>
-            <button className={styles.buttonLight} onClick={() => addToBasket('Jordan 4 Retro Canyon Purple', 'Jordan', 289, true)}>Add to basket <i className="bx bx-right-arrow-alt button-icon"></i></button>
+            <button className={styles.buttonLight} onClick={() => addToBasket({ id: 4, nombre: 'Jordan 4 Retro Canyon Purple', precio: 289 })}>Add to basket <i className="bx bx-right-arrow-alt button-icon"></i></button>
           </article>
 
           <article className={styles.sneaker}>
             <img src={jordan5} alt="" className={styles.sneaker__img} />
             <span className={styles.sneaker__name}>Jordan 4 Frozen Moments</span>
             <span className={styles.sneaker__precio}>284€</span>
-            <button className={styles.buttonLight} onClick={() => addToBasket('Jordan 4 Frozen Moments', 'Jordan', 284, true)}>Add to basket <i className="bx bx-right-arrow-alt button-icon"></i></button>
+            <button className={styles.buttonLight} onClick={() => addToBasket({ id: 5, nombre: 'Jordan 4 Frozen Moments', precio: 284 })}>Add to basket <i className="bx bx-right-arrow-alt button-icon"></i></button>
           </article>
 
           <article className={styles.sneaker}>
             <img src={jordan6} alt="" className={styles.sneaker__img} />
             <span className={styles.sneaker__name}>Jordan 11 Retro Midnight Navy</span>
             <span className={styles.sneaker__precio}>120€</span>
-            <button className={styles.buttonLight} onClick={() => addToBasket('Jordan 11 Retro Midnight Navy', 'Jordan', 120, true)}>Add to basket <i className="bx bx-right-arrow-alt button-icon"></i></button>
+            <button className={styles.buttonLight} onClick={() => addToBasket({ id: 6, nombre: 'Jordan 11 Retro Midnight Navy', precio: 120 })}>Add to basket <i className="bx bx-right-arrow-alt button-icon"></i></button>
           </article>
 
           <article className={styles.sneaker}>
             <img src={jordan7} alt="" className={styles.sneaker__img} />
             <span className={styles.sneaker__name}>Jordan 1 Mid SE Fearless Melody Ehsani</span>
             <span className={styles.sneaker__precio}>885€</span>
-            <button className={styles.buttonLight} onClick={() => addToBasket('Jordan 1 Mid SE Fearless Melody Ehsani', 'Jordan', 885, true)}>Add to basket <i className="bx bx-right-arrow-alt button-icon"></i></button>
+            <button className={styles.buttonLight} onClick={() => addToBasket({ id: 7, nombre: 'Jordan 1 Mid SE Fearless Melody Ehsani', precio: 885 })}>Add to basket <i className="bx bx-right-arrow-alt button-icon"></i></button>
           </article>
 
           <article className={styles.sneaker}>
             <img src={jordan8} alt="" className={styles.sneaker__img} />
             <span className={styles.sneaker__name}>Jordan 1 Retro High OG Palomino</span>
             <span className={styles.sneaker__precio}>171€</span>
-            <button className={styles.buttonLight} onClick={() => addToBasket('Jordan 1 Retro High OG Palomino', 'Jordan', 171, true)}>Add to basket <i className="bx bx-right-arrow-alt button-icon"></i></button>
+            <button className={styles.buttonLight} onClick={() => addToBasket({ id: 8, nombre: 'Jordan 1 Retro High OG Palomino', precio: 171 })}>Add to basket <i className="bx bx-right-arrow-alt button-icon"></i></button>
           </article>
 
           <article className={styles.sneaker}>
             <img src={jordan9} alt="" className={styles.sneaker__img} id="dnk" />
             <span className={styles.sneaker__name} id="dnk-text">Nike SB Dunk Low Concepts Purple Lobster</span>
             <span className={styles.sneaker__precio}>982€</span>
-            <button className={styles.buttonLight} onClick={() => addToBasket('Nike SB Dunk Low Concepts Purple Lobster', 'Nike', 982, true)}>Add to basket <i className="bx bx-right-arrow-alt button-icon"></i></button>
+            <button className={styles.buttonLight} onClick={() => addToBasket({ id: 9, nombre: 'Nike SB Dunk Low Concepts Purple Lobster', precio: 982 })}>Add to basket <i className="bx bx-right-arrow-alt button-icon"></i></button>
           </article>
 
           <article className={styles.sneaker}>
             <img src={jordan10} alt="" className={styles.sneaker__img} id="onyx"/>
             <span className={styles.sneaker__name} id="onyx-text">adidas Yeezy Foam RNR Onyx</span>
             <span className={styles.sneaker__precio}>114€</span>
-            <button className={styles.buttonLight} onClick={() => addToBasket('adidas Yeezy Foam RNR Onyx', 'Adidas', 114, true)}>Add to basket <i className="bx bx-right-arrow-alt button-icon"></i></button>
+            <button className={styles.buttonLight} onClick={() => addToBasket({ id: 10, nombre: 'adidas Yeezy Foam RNR Onyx', precio: 114})}>Add to basket <i className="bx bx-right-arrow-alt button-icon"></i></button>
           </article>
 
           <article className={styles.sneaker}>
             <img src={jordan11} alt="" className={styles.sneaker__img} id="trvis" />
             <span className={styles.sneaker__name} id="trvis">Jordan 1 Retro Low OG SP Fragment x Travis Scott</span>
             <span className={styles.sneaker__precio}>1.444€</span>
-            <button className={styles.buttonLight} onClick={() => addToBasket('Jordan 1 Retro Low OG SP Fragment x Travis Scott', 'Jordan', 1444, true)}>Add to basket <i className="bx bx-right-arrow-alt button-icon"></i></button>
+            <button className={styles.buttonLight} onClick={() => addToBasket({ id: 11, nombre: 'Jordan 1 Retro Low OG SP Fragment x Travis Scott', precio: 1444 })}>Add to basket <i className="bx bx-right-arrow-alt button-icon"></i></button>
           </article>
         </div>
         

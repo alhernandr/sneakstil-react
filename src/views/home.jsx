@@ -168,7 +168,7 @@ const home = () => {
       <div className={styles.new__mens}>
         <img src={zapatilla4} alt="" className={styles.new__mensImg} />
         <h3 className={styles.new__title}>Mens Shoes</h3>
-        <span className={styles.new__preci}>From $79.99</span>
+        <span className={styles.new__preci}>From 79.99€</span>
         <Link to="/shop" className={styles.buttonLight}>View Collection <i className="bx bx-right-arrow-alt button-icon"></i></Link>{/*ARREGLAR CON LA UNION DE VARIAS CLASES*/}
       </div>
       {/* <!-- Sneakers de la nueva colección --> */}

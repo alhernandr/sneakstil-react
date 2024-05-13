@@ -82,9 +82,9 @@ const SignIn = () => {
    */
   const handlePasswordChange = (event) => {
     setPasword(event.target.value);
-    // Validación básica aquí, por ejemplo, verificar que la contraseña tenga al menos 8 caracteres
-    if (event.target.value.length < 8) {
-      setErrors({ ...errors, pasword: 'La contraseña tiene que tener al menos 8 caracteres.' });
+    // Validación básica aquí, por ejemplo, verificar que la contraseña tenga al menos 5 caracteres
+    if (event.target.value.length < 5) {
+      setErrors({ ...errors, pasword: 'La contraseña tiene que tener al menos 5 caracteres.' });
     } else {
       setErrors({ ...errors, pasword: '' });
     }
