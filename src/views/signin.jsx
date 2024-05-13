@@ -116,18 +116,23 @@ const SignIn = () => {
           <h1>Sign In</h1>
           <form onSubmit={handleSubmit}>
             {/* //NOMBRE */}
+            <label htmlFor="nombre">Nombre:</label><br />
             <div className={styles.error}>{errors.nombre}</div>
-            <input type="text" placeholder='Username' id="username" name="username" value={nombre} onChange={handleNombreChange} required />
+            <input type="text" placeholder='Username' id="nombre" name="nombre" value={nombre} onChange={handleNombreChange} required />
           
             {/* //EMAIL */}
+            <label htmlFor="email">Email:</label><br />
             <div className={styles.error}>{errors.email}</div>
             <input type="text" placeholder='Email' id="email" name="email" value={email} onChange={handleEmailChange} required />
           
             {/* //CONTRASEÑA */}
+            <label htmlFor="password">Password:</label><br />
             <div className={styles.error}>{errors.pasword}</div>
             <input type="password" placeholder='Password' id="password" name="password" value={pasword} onChange={handlePasswordChange} required />
 
-            <Button href="/" type="submit" value="Signin" className={styles.buttonSignin}>Sign In</Button>
+            <div className={styles.logButton}>
+              <input className={styles.buttonSignin} type="submit" value="Sign In" />
+            </div>
             
             <div className={styles.createaccount}>
               <Link to="/login">Already have an account?</Link>
@@ -135,38 +140,6 @@ const SignIn = () => {
           </form>
         </div>
       </section>
-      
-      {/* ANTIGUO SIGN IN
-      <div className={styles.contenedorLog}>
-        <center>  
-          <h2 className={styles.login}>Sign In</h2>
-          <form onSubmit={handleSubmit}>
-
-            {/* //NOMBRE }
-            <label htmlFor="nombre">Nombre:</label><br />
-            <div className={styles.error}>{errors.nombre}</div>
-            <input type="text" id="nombre" name="nombre" value={nombre} onChange={handleNombreChange} required /><br /><br />
-            
-            {/* //EMAIL }
-            <label htmlFor="email">Email:</label><br />
-            <div className={styles.error}>{errors.email}</div>
-            <input type="text" id="email" name="email" value={email} onChange={handleEmailChange} required /><br /><br />
-           
-           {/* //CONTRASEÑA }
-            <label htmlFor="password">Password:</label><br />
-            <div className={styles.error}>{errors.pasword}</div>
-            <input type="password" id="password" name="password" value={pasword} onChange={handlePasswordChange} required /><br /><br />
-
-
-            <div className={styles.logButton}>
-              <input className={styles.boton} type="submit" value="Sign In" />
-            </div>
-            <div className={styles.createAccount}>
-              <Link to="/login">Already have an account?</Link>
-            </div>
-          </form>
-        </center>
-      </div>*/}
       <Footer/>
     </div>
   );

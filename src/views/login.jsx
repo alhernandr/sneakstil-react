@@ -13,7 +13,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-
+import { useNavigate } from "react-router-dom";
 import styles from "../css/styles.module.css";
 import Header from "../components/header/header";
 import Footer from "../components/footer/footer";
@@ -78,6 +78,7 @@ const Login = () => {
    * @function handleSubmit
    * @param {Object} event - Evento de envío.
    */
+const navigate = useNavigate();
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -90,6 +91,7 @@ const Login = () => {
 
         if (response.data.success) {
           alert("Inicio de sesión exitoso");
+          navigate("/");
         } else {
           alert(response.data.message || "Error al iniciar sesión");
         }
@@ -108,11 +110,11 @@ const Login = () => {
       <section className={styles.lognnn}>
         <div className={styles.container}>
           <h1>LOGIN</h1>
-          <form onSubmit={handleSubmit}>
+          <form >
             <input
               type="text"
               placeholder="Email"
-              id="usuario"
+              id="nombre"
               name="nombre"
               value={nombre}
               onChange={handleNombreChange}
@@ -129,58 +131,15 @@ const Login = () => {
               required
             />
             <div className={styles.error}>{errors.pasword}</div>
-            <Button href="/" type="submit" value="Login" className={styles.buttonLogin}>Login</Button>
-            
+            <div className={styles.logButton}>
+                <Button href="/" className={styles.buttonLogin} type="submit" value="Login" onClick={handleSubmit} >Login</Button>
+              </div>            
             <div className={styles.createaccount}>
               <Link to="/login/signin">Create an account</Link>
             </div>
           </form>
         </div>
       </section>
-
-      {/* ANTIGUO LOGIN
-      <section>
-        <div className={styles.contenedorLog}>
-          <center>
-            <h2 className={styles.login}>LOGIN</h2>
-            <form onSubmit={handleSubmit}>
-              <label htmlFor="nombre">Usuario:</label>
-              <br />
-              <input
-                type="text"
-                id="nombre"
-                name="nombre"
-                value={nombre}
-                onChange={handleNombreChange}
-                required
-              />
-              <br />
-              <br />
-              <div className={styles.error}>{errors.nombre}</div>
-              <label htmlFor="pasword">Contraseña:</label>
-              <br />
-              <input
-                type="password"
-                id="pasword"
-                name="pasword"
-                value={pasword}
-                onChange={handlePaswordChange}
-                required
-              />
-              <br />
-              <br />
-              <div className={styles.error}>{errors.pasword}</div>
-              <div className={styles.logButton}>
-                <Button href="/" className={styles.boton} type="submit" value="Login" >Login</Button>
-              </div>
-              <br />
-              <div className={styles.createAccount}>
-                <Link to="/login/signin">Create an account</Link>
-              </div>
-            </form>
-          </center>
-        </div>
-      </section>*/}
       <Footer />
     </div>
   );
