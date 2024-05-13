@@ -105,6 +105,40 @@ const Login = () => {
   return (
     <div>
       <Header />
+      <section className={styles.lognnn}>
+        <div className={styles.container}>
+          <h1>LOGIN</h1>
+          <form onSubmit={handleSubmit}>
+            <input
+              type="text"
+              placeholder="Email"
+              id="usuario"
+              name="nombre"
+              value={nombre}
+              onChange={handleNombreChange}
+              required
+            />
+            <div className={styles.error}>{errors.nombre}</div>
+            <input
+              type="password"
+              placeholder="Password"
+              id="clave"
+              name="clave"
+              value={pasword}
+              onChange={handlePaswordChange}
+              required
+            />
+            <div className={styles.error}>{errors.pasword}</div>
+            <Button href="/" type="submit" value="Login" className={styles.buttonLogin}>Login</Button>
+            
+            <div className={styles.createaccount}>
+              <Link to="/login/signin">Create an account</Link>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      {/* ANTIGUO LOGIN
       <section>
         <div className={styles.contenedorLog}>
           <center>
@@ -146,7 +180,7 @@ const Login = () => {
             </form>
           </center>
         </div>
-      </section>
+      </section>*/}
       <Footer />
     </div>
   );

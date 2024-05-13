@@ -18,6 +18,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from "axios";
 import Header from '../components/header/header'
 import Footer from '../components/footer/footer'
+import { Button } from "react-bootstrap";
 
 /**
  * Componente funcional que representa el formulario de registro.
@@ -110,22 +111,48 @@ const SignIn = () => {
   return (
     <div>
       <Header/>
+      <section className={styles.lognnn}>
+        <div className={styles.container}>
+          <h1>Sign In</h1>
+          <form onSubmit={handleSubmit}>
+            {/* //NOMBRE */}
+            <div className={styles.error}>{errors.nombre}</div>
+            <input type="text" placeholder='Username' id="username" name="username" value={nombre} onChange={handleNombreChange} required />
+          
+            {/* //EMAIL */}
+            <div className={styles.error}>{errors.email}</div>
+            <input type="text" placeholder='Email' id="email" name="email" value={email} onChange={handleEmailChange} required />
+          
+            {/* //CONTRASEÑA */}
+            <div className={styles.error}>{errors.pasword}</div>
+            <input type="password" placeholder='Password' id="password" name="password" value={pasword} onChange={handlePasswordChange} required />
+
+            <Button href="/" type="submit" value="Signin" className={styles.buttonSignin}>Sign In</Button>
+            
+            <div className={styles.createaccount}>
+              <Link to="/login">Already have an account?</Link>
+            </div>
+          </form>
+        </div>
+      </section>
+      
+      {/* ANTIGUO SIGN IN
       <div className={styles.contenedorLog}>
         <center>  
           <h2 className={styles.login}>Sign In</h2>
           <form onSubmit={handleSubmit}>
 
-            {/* //NOMBRE */}
+            {/* //NOMBRE }
             <label htmlFor="nombre">Nombre:</label><br />
             <div className={styles.error}>{errors.nombre}</div>
             <input type="text" id="nombre" name="nombre" value={nombre} onChange={handleNombreChange} required /><br /><br />
             
-            {/* //EMAIL */}
+            {/* //EMAIL }
             <label htmlFor="email">Email:</label><br />
             <div className={styles.error}>{errors.email}</div>
             <input type="text" id="email" name="email" value={email} onChange={handleEmailChange} required /><br /><br />
            
-           {/* //CONTRASEÑA */}
+           {/* //CONTRASEÑA }
             <label htmlFor="password">Password:</label><br />
             <div className={styles.error}>{errors.pasword}</div>
             <input type="password" id="password" name="password" value={pasword} onChange={handlePasswordChange} required /><br /><br />
@@ -139,7 +166,7 @@ const SignIn = () => {
             </div>
           </form>
         </center>
-      </div>
+      </div>*/}
       <Footer/>
     </div>
   );

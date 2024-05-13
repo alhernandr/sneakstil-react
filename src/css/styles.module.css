@@ -173,6 +173,14 @@ img {
   margin-right: -15px;
 }
 
+.logoHome{
+  margin-left: 1rem;
+}
+
+.carrito{
+  margin-right: 1rem;
+}
+
 /*Show menu*/
 .show {
   left: 0;
@@ -648,8 +656,6 @@ img {
     width: 31%;
   }
 
-  
-
 }
 @media screen and (min-width: 768px) {
   body {
@@ -918,3 +924,103 @@ img{
   margin-right:5rem;
 }
 
+.lognnn{
+  width: 100%;
+  padding: 100px 15px;
+  background: linear-gradient( rgba(255, 255, 255, 0), rgba(0, 0, 0, .7)), url("../img/0f2603f2906b312521059e5dacd7ea76.jpeg");
+  image-rendering: auto;
+  background-size: cover;
+  background-position: center center;
+  height: 100vh;
+}
+
+.container h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.container input[type="text"],
+.container input[type="email"],
+.container input[type="password"]{
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #ffffff00;
+  color: #fff;
+  border: 1px solid #ddd;
+  outline: none;
+  box-sizing: border-box;
+}
+.container input::placeholder{
+  color: #fff;
+}
+
+.container .buttonLogin {
+  width: 100%;
+  padding: 5px 210px;
+  background-color: #9a9ea08a;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.container .buttonSignin {
+  width: 100%;
+  padding: 5px 203px;
+  background-color: #9a9ea08a;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.container .buttonLogin:hover {
+  background-color: #656c7096;
+}
+
+.container {
+  width: 100%;
+  backdrop-filter: blur(10px); 
+  max-width: 500px;
+  margin: 10.3rem auto;
+  padding: 20px;
+  color: #fff;
+  border-radius: 1rem;
+}
+
+.createaccount{
+  text-align: center;
+  margin-top: 20px;
+}
+
+.createaccount a{
+  color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 10px;
+    margin: 5rem auto;
+  }
+
+  .lognnn{
+    width: 47vh;
+    margin-left: -3rem;
+  }
+  
+  .container .buttonSignin {
+    padding: 5px 167px; 
+  }
+
+  .container .buttonLogin{
+    padding: 5px 172px;
+  }
+
+  html{
+    scroll-behavior: smooth;
+    width: 57vh;
+    margin-left: -3rem;
+  }
+}

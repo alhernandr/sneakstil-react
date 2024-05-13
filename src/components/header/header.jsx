@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import styles from "../../css/styles.module.css";
 import logo from "../../img/logo.png";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faUser } from '@fortawesome/free-solid-svg-icons';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
 const Header = () => {
@@ -29,6 +29,7 @@ const Header = () => {
               <li className={styles.nav__item}>
                 <Link to="/" className={styles.nav__link}>
                   Home
+                  {/*<FontAwesomeIcon icon={faHome}/>*/}
                 </Link>
               </li>
               <li className={styles.nav__item}>
@@ -58,7 +59,7 @@ const Header = () => {
               </li>
               <li className={styles.nav__item}>
                 <Link to="/basket" className={styles.navLink}>
-                  <FontAwesomeIcon icon={faShoppingCart} />
+                  <FontAwesomeIcon className={styles.carrito} icon={faShoppingCart} />
                 </Link>
               </li>
             </ul>
