@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 12-05-2024 a las 19:12:48
+-- Tiempo de generación: 14-05-2024 a las 21:19:40
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -24,17 +24,23 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `cesta`
+-- Estructura de tabla para la tabla `admin`
 --
 
-CREATE TABLE `cesta` (
+CREATE TABLE `admin` (
   `id` int(11) NOT NULL,
-  `nombre` varchar(255) DEFAULT NULL,
-  `marca` varchar(100) DEFAULT NULL,
-  `precio` decimal(10,2) DEFAULT NULL,
-  `disponibilidad` varchar(50) DEFAULT NULL,
-  `imagen` varchar(255) DEFAULT NULL
+  `nombre` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `pasword` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `admin`
+--
+
+INSERT INTO `admin` (`id`, `nombre`, `email`, `pasword`) VALUES
+(1, 'alvaro', 'alvaro@gmail.com', 'admin'),
+(3, 'lionel', 'lionel@gmail.com', 'admin');
 
 -- --------------------------------------------------------
 
@@ -56,9 +62,9 @@ CREATE TABLE `clientes` (
 
 INSERT INTO `clientes` (`id`, `nombre`, `email`, `pasword`, `admin`) VALUES
 (10, 'lu', 'lu@gmail.com', '$2y$10$E.PTofHmhmQjkbmXz5UtpODkmUqBP.a24.XYIsgEmkKDsuNU8OAd6', NULL),
-(12, 'admin', 'admin@gmail.com', '$2y$10$mKJ4QD9zWhInPx3sZNQQxOnVjhdi8A/loqS6fdhekWQQt9qib3pLO', 1),
 (13, 'alvaro', 'alvaro29032000@gmail.com', '$2y$10$Cm6kF.3aGdvB.U7poPUrDuOlVltUsxCK7jdJa69o/f8F7tvspFyfS', NULL),
-(20, 'Eliazar', 'Eliazar@gmail.com', '12345678', NULL);
+(20, 'Eliazar', 'Eliazar@gmail.com', '12345678', NULL),
+(21, 'admin', 'admin@admin.com', 'admin', 1);
 
 -- --------------------------------------------------------
 
@@ -94,9 +100,9 @@ INSERT INTO `productos` (`id`, `nombre`, `marca`, `precio`, `disponibilidad`, `i
 --
 
 --
--- Indices de la tabla `cesta`
+-- Indices de la tabla `admin`
 --
-ALTER TABLE `cesta`
+ALTER TABLE `admin`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -116,22 +122,22 @@ ALTER TABLE `productos`
 --
 
 --
--- AUTO_INCREMENT de la tabla `cesta`
+-- AUTO_INCREMENT de la tabla `admin`
 --
-ALTER TABLE `cesta`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+ALTER TABLE `admin`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `clientes`
 --
 ALTER TABLE `clientes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
