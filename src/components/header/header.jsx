@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import styles from "../../css/styles.module.css";
 import logo from "../../img/logo.png";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faUser } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faShop, faUser } from '@fortawesome/free-solid-svg-icons';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import Cookies from 'js-cookie'; // Importa el paquete js-cookie
 
@@ -36,11 +36,10 @@ const Header = () => {
             <ul className={styles.nav__list}>
               <li className={styles.nav__item}>
                 <Link to="/" className={styles.nav__link}>
-                  Home
-                  {/*<FontAwesomeIcon icon={faHome}/>*/}
+                  <FontAwesomeIcon icon={faHome}/>
                 </Link>
               </li>
-              <li className={styles.nav__item}>
+              {/*<li className={styles.nav__item}>
                 <Link to="/#" onClick={() => scrollToSection('featured')}>
                   Featured
                 </Link>
@@ -54,10 +53,10 @@ const Header = () => {
                 <Link to="/#" onClick={() => scrollToSection('new')}>
                   New
                 </Link>
-              </li>
+              </li>*/}
               <li className={styles.nav__item}>
                 <Link to="/shop" className={styles.navLink}>
-                  Shop
+                  <FontAwesomeIcon icon={faShop}/>
                 </Link>
               </li>
               {isLoggedIn ? ( // Si el usuario está autenticado, muestra el botón de "Logout"
