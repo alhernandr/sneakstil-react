@@ -218,7 +218,10 @@ app.delete("/borrar-datos-cesta/:id", (req, res) => {
 app.post("/login", (req, res) => {
   const { nombre, pasword } = req.body;
   
-  const query = "SELECT * FROM clientes WHERE nombre = ? AND pasword = ?";
+  const query = `
+    SELECT * FROM admin WHERE nombre = ? AND pasword = ?
+  `;
+  
   connection.query(query, [nombre, pasword], (err, results) => {
     if (err) {
       console.error("Error al realizar la consulta: ", err);
@@ -226,12 +229,28 @@ app.post("/login", (req, res) => {
       return;
     }
     if (results.length === 1) {
-      res.status(200).json({ success: true, message: "Inicio de sesión exitoso" });
+      res.status(200).json({ success: true, message: "Inicio de sesión como administrador exitoso" });
     } else {
-      res.status(404).json({ success: false, message: "Usuario no encontrado" });
+      const clienteQuery = `
+        SELECT * FROM clientes WHERE nombre = ? AND pasword = ?
+      `;
+      connection.query(clienteQuery, [nombre, pasword], (err, results) => {
+        if (err) {
+          console.error("Error al realizar la consulta: ", err);
+          res.status(500).json({ success: false, message: "Error al iniciar sesión" });
+          return;
+        }
+        if (results.length === 1) {
+          res.status(200).json({ success: true, message: "Inicio de sesión como cliente exitoso" });
+        } else {
+          res.status(404).json({ success: false, message: "Usuario no encontrado" });
+        }
+      });
     }
   });
 });
+
+
 
 // Define el puerto en el que escuchará el servidor
 const PORT = process.env.PORT || 5000;

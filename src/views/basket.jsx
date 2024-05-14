@@ -37,7 +37,7 @@ const Basket = () => {
       
         <br></br>
         <br></br>
-        <table>
+        
           <thead>
             <tr>
               <td>Nombre</td>
@@ -60,7 +60,7 @@ const Basket = () => {
               </tr>
             ))}
           </tbody>
-        </table>
+        
         <br></br>
         <br></br>
         <Button

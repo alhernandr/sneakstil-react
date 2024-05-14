@@ -79,22 +79,26 @@ const Login = () => {
    * @function handleSubmit
    * @param {Object} event - Evento de envío.
    */
-const navigate = useNavigate();
+  const navigate = useNavigate();
   const handleSubmit = async (event) => {
     event.preventDefault();
-
+  
     if (nombre && pasword.length >= 5) {
       try {
         const response = await axios.post('http://localhost:5000/login', {
           nombre,
-          pasword,
+          pasword
         });
-
+  
         if (response.data.success) {
           alert("Inicio de sesión exitoso");
           Cookies.set('token', response.data.token); // Guarda el token de sesión en una cookie llamada 'token'
-          navigate("/");
-        
+          
+          if (response.data.message === "Inicio de sesión como administrador exitoso") {
+            navigate("/admin");
+          } else {
+            navigate("/");
+          }
         } else {
           alert(response.data.message || "Error al iniciar sesión");
         }
@@ -106,6 +110,7 @@ const navigate = useNavigate();
       alert("Por favor, complete todos los campos correctamente.");
     }
   };
+  
 
   return (
     <div>
