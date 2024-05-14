@@ -117,7 +117,7 @@ const home = () => {
       <article className={styles.sneaker}>
         <div className={styles.sneaker__sale}>Sale</div>
         <img src={jordan4} alt="" className={styles.sneaker__img} />
-        <span className={styles.sneaker__name}>Jordan 4 Retro Canyon Purple</span>
+        <span className={styles.sneaker__nameCanyon}>Jordan 4 Retro Canyon Purple</span>
         <span className={styles.sneaker__preci}>289€</span>
         <Link to="/shop" className={styles.buttonLight}>Add to Cart <i className="bx bx-right-arrow-alt button-icon"></i></Link>{/*ARREGLAR CON LA UNION DE VARIAS CLASES*/}
       </article>
@@ -125,7 +125,7 @@ const home = () => {
       <article className={styles.sneaker}>
         <div className={styles.sneaker__sale}>Sale</div>
         <img src={jordan9} alt="" className={styles.sneaker__img} />
-        <span className={styles.sneaker__name}>Jordan 4 Frozen Moments</span>
+        <span className={styles.sneaker__nameFrozen}>Jordan 4 Frozen Moments</span>
         <span className={styles.sneaker__preci}>284€</span>
         <Link to="/shop" className={styles.buttonLight}>Add to Cart <i className="bx bx-right-arrow-alt button-icon"></i></Link>{/*ARREGLAR CON LA UNION DE VARIAS CLASES*/}
       </article>
@@ -133,7 +133,7 @@ const home = () => {
       <article className={styles.sneaker}>
         <div className={styles.sneaker__sale}>Sale</div>
         <img src={jordan5} alt="" className={styles.sneaker__img} />
-        <span className={styles.sneaker__name}>Jordan 11 Retro Midnight Navy</span>
+        <span className={styles.sneaker__nameMidnight}>Jordan 11 Retro Midnight Navy</span>
         <span className={styles.sneaker__preci}>120€</span>
         <Link to="/shop" className={styles.buttonLight}>Add to Cart <i className="bx bx-right-arrow-alt button-icon"></i></Link>{/*ARREGLAR CON LA UNION DE VARIAS CLASES*/}
       </article>
@@ -141,7 +141,7 @@ const home = () => {
       <article className={styles.sneaker}>
         <div className={styles.sneaker__sale}>Sale</div>
         <img src={jordan6} alt="" className={styles.sneaker__img}/>
-        <span className={styles.sneaker__name}>Jordan 1 Mid SE Fearless Melody Ehsani</span>
+        <span className={styles.sneaker__nameFearless}>Jordan 1 Fearless Melody Ehsani</span>
         <span className={styles.sneaker__preci}>885€</span>
         <Link to="/shop" className={styles.buttonLight}>Add to Cart <i className="bx bx-right-arrow-alt button-icon"></i></Link>{/*ARREGLAR CON LA UNION DE VARIAS CLASES*/}
       </article>

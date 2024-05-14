@@ -327,6 +327,36 @@ img {
   font-weight: 700;
   text-align: center;
 }
+
+.sneaker__nameFrozen{
+  font-size: 1.25rem;
+  letter-spacing: 0.1rem;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 1.5rem;
+}
+.sneaker__nameCanyon{
+  font-size: 1.25rem;
+  letter-spacing: 0.1rem;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 1rem;
+}
+.sneaker__nameMidnight{
+  font-size: 1.25rem;
+  letter-spacing: 0.1rem;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 2.3rem;
+}
+.sneaker__nameFearless{
+  font-size: 1.25rem;
+  letter-spacing: 0.1rem;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 2rem;
+}
+
 .sneaker__name {
   margin-bottom: 0.5rem;
 }
@@ -676,6 +706,7 @@ img {
   }
 
   .nav__menu {
+    /*margin-left: 50rem;*/
     margin-left: auto;
   }
 
@@ -1006,8 +1037,7 @@ img{
   }
 
   .lognnn{
-    width: 47vh;
-    margin-left: -3rem;
+    width: 82.2vh;
   }
   
   .container .buttonSignin {
@@ -1015,12 +1045,53 @@ img{
   }
 
   .container .buttonLogin{
-    padding: 5px 172px;
+    padding: 5px 219px;
   }
 
   html{
     scroll-behavior: smooth;
-    width: 57vh;
+    margin-left: -3rem;
+    width: 82vh;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .container {
+    padding: 10px;
+    margin: 5rem auto;
+  }
+
+  .lognnn{
+    max-width: 45vh;
+  }
+  
+  .container .buttonSignin {
+    padding: 5px 110px; 
+  }
+
+  .container .buttonLogin{
+    padding: 5px 163px;
+  }
+
+  html{
+    scroll-behavior: smooth;
+    max-width: 55.2vh;
+  }
+
+  .logoHome{
     margin-left: -3rem;
   }
+}
+
+@keyframes rotateLogo {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+.logoHome{
+  animation: rotateLogo 4s linear infinite;
 }

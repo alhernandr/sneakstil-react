@@ -14,6 +14,8 @@ import styles from '../css/styles.module.css';
 import axios from "axios";
 import { useNavigate } from 'react-router-dom';
 import logo from '../img/logo.png';
+import Header from '../components/header/header'
+import Footer from '../components/footer/footer'
 
 /**
  * Componente funcional para crear un nuevo producto.
@@ -55,6 +57,7 @@ const Crear = () => {
   };
   return (
     <div>
+      <Header/>
       <main className={`${styles.contenedor} ${styles.seccion}`}>
         <form className={styles.formulario} onSubmit={handleSubmit}>
           <h1>Crear</h1>
@@ -89,6 +92,7 @@ const Crear = () => {
       <div className={styles.logoAdmin}>
         <img className={styles.logoGrande} src={logo} alt="Logo" />
       </div>
+      <Footer/>
     </div>
   );
 };

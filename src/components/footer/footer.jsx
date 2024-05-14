@@ -1,6 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styles from "../../css/styles.module.css"; // Asegúrate de que la ruta sea correcta
+import { faHome, faUser } from '@fortawesome/free-solid-svg-icons';
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Cookies from 'js-cookie'; // Importa el paquete js-cookie
 
 import logo from "../../img/logo.png"
 const Footer = () => {
@@ -10,6 +14,15 @@ const Footer = () => {
         element.scrollIntoView({ behavior: 'smooth' });
       }
     };
+
+    
+  const handleLogout = () => {
+    Cookies.remove('token'); 
+    Cookies.set("basketProducts", "");
+  };
+
+  const isLoggedIn = Cookies.get('token'); 
+
   return (
     <div>
       <section className={`${styles.footer} ${styles.section}`}>
@@ -51,6 +64,24 @@ const Footer = () => {
               <li className={styles.footer__link}>
                 <Link to="/#" onClick={() => scrollToSection('new')}>
                   New
+                </Link>
+              </li>
+              {isLoggedIn ? ( // Si el usuario está autenticado, muestra el botón de "Logout"
+                <li className={styles.nav__item}>
+                  <Link to="/login" className={styles.navLink} onClick={handleLogout}>
+                    LogOut
+                  </Link>
+                </li>
+              ) : ( // Si el usuario no está autenticado, muestra el icono de usuario
+                <li className={styles.nav__item}>
+                  <Link to="/login" className={styles.navLink}>
+                    <FontAwesomeIcon icon={faUser} />
+                  </Link>
+                </li>
+              )}
+              <li className={styles.nav__item}>
+                <Link to="/basket" className={styles.navLink}>
+                  <FontAwesomeIcon className={styles.carrito} icon={faShoppingCart} />
                 </Link>
               </li>
             </ul>
