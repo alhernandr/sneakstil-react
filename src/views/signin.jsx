@@ -116,17 +116,17 @@ const SignIn = () => {
           <h1>Sign In</h1>
           <form onSubmit={handleSubmit}>
             {/* //NOMBRE */}
-            <label htmlFor="nombre">Nombre:</label><br />
+            <label htmlFor="nombre"></label><br />
             <div className={styles.error}>{errors.nombre}</div>
             <input type="text" placeholder='Username' id="nombre" name="nombre" value={nombre} onChange={handleNombreChange} required />
           
             {/* //EMAIL */}
-            <label htmlFor="email">Email:</label><br />
+            <label htmlFor="email"></label><br />
             <div className={styles.error}>{errors.email}</div>
             <input type="text" placeholder='Email' id="email" name="email" value={email} onChange={handleEmailChange} required />
           
             {/* //CONTRASEÑA */}
-            <label htmlFor="password">Password:</label><br />
+            <label htmlFor="password"></label><br />
             <div className={styles.error}>{errors.pasword}</div>
             <input type="password" placeholder='Password' id="password" name="password" value={pasword} onChange={handlePasswordChange} required />
 
