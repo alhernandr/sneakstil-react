@@ -1141,6 +1141,51 @@ img{
   color: #fff;
 }
 
+/* Estilos para el formulario de pago */
+.formPago {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.formGroup {
+  margin-bottom: 20px;
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.formGroup input[type="text"],
+.formGroup input[type="number"],
+.formGroup input[type="email"],
+.formGroup select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.formGroup input[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  float: right;
+}
+
+.formGroup input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
 @media screen and (max-width: 768px) {
   .container {
     padding: 10px;

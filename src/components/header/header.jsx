@@ -39,21 +39,6 @@ const Header = () => {
                   <FontAwesomeIcon icon={faHome}/>
                 </Link>
               </li>
-              {/*<li className={styles.nav__item}>
-                <Link to="/#" onClick={() => scrollToSection('featured')}>
-                  Featured
-                </Link>
-              </li>
-              <li className={styles.nav__item}>
-                <Link to="/#" onClick={() => scrollToSection('women')}>
-                  Women
-                </Link>
-              </li>
-              <li className={styles.nav__item}>
-                <Link to="/#" onClick={() => scrollToSection('new')}>
-                  New
-                </Link>
-              </li>*/}
               <li className={styles.nav__item}>
                 <Link to="/shop" className={styles.navLink}>
                   <FontAwesomeIcon icon={faShop}/>
