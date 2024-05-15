@@ -8,6 +8,7 @@
  * @requires styles
  */
 
+import { Link } from "react-router-dom";
 import React,{useState, useEffect} from 'react';
 import axios from 'axios';
 import Cookies from 'js-cookie';
@@ -86,76 +87,31 @@ const Shop = () => {
 
           <article className={styles.sneaker}>
             <img src={jordan3} alt="" className={styles.sneaker__img} />
-            <span className={styles.sneaker__name}>Jordan 3 Retro SP A Ma Maniére</span>
-            <span className={styles.sneaker__precio}>461€</span>
-            <button className={styles.buttonLight} onClick={() => addToBasket({ id: 3, nombre: 'Jordan 3 Retro SP A Ma Maniére', precio: 461 })}>Add to basket <i className="bx bx-right-arrow-alt button-icon"></i></button>
+            <span className={styles.sneaker__name}>Jordan 3 Retro SP J Balvin Medellín Sunset</span>
+            <span className={styles.sneaker__precio}>582€</span>
+            <button className={styles.buttonLight} onClick={() => addToBasket({ id: 3, nombre: 'Jordan 3 Retro SP J Balvin Medellín Sunset', precio: 582 })}>Add to basket <i className="bx bx-right-arrow-alt button-icon"></i></button>
           </article>
 
           <article className={styles.sneaker}>
-            <img src={jordan4} alt="" className={styles.sneaker__img} />
-            <span className={styles.sneaker__name}>Jordan 4 Retro Canyon Purple</span>
+            <img src={jordan4} alt="" className={styles.sneaker__imgCanyon} />
+            <span className={styles.sneaker__nameCan}>Jordan 4 Retro Canyon Purple</span>
             <span className={styles.sneaker__precio}>289€</span>
             <button className={styles.buttonLight} onClick={() => addToBasket({ id: 4, nombre: 'Jordan 4 Retro Canyon Purple', precio: 289 })}>Add to basket <i className="bx bx-right-arrow-alt button-icon"></i></button>
           </article>
 
           <article className={styles.sneaker}>
-            <img src={jordan5} alt="" className={styles.sneaker__img} />
-            <span className={styles.sneaker__name}>Jordan 4 Frozen Moments</span>
+            <img src={jordan5} alt="" className={styles.sneaker__imgFrozen} />
+            <span className={styles.sneaker__nameFrzn}>Jordan 4 Retro Frozen Moments</span>
             <span className={styles.sneaker__precio}>284€</span>
             <button className={styles.buttonLight} onClick={() => addToBasket({ id: 5, nombre: 'Jordan 4 Frozen Moments', precio: 284 })}>Add to basket <i className="bx bx-right-arrow-alt button-icon"></i></button>
           </article>
-
-          <article className={styles.sneaker}>
-            <img src={jordan6} alt="" className={styles.sneaker__img} />
-            <span className={styles.sneaker__name}>Jordan 11 Retro Midnight Navy</span>
-            <span className={styles.sneaker__precio}>120€</span>
-            <button className={styles.buttonLight} onClick={() => addToBasket({ id: 6, nombre: 'Jordan 11 Retro Midnight Navy', precio: 120 })}>Add to basket <i className="bx bx-right-arrow-alt button-icon"></i></button>
-          </article>
-
-          <article className={styles.sneaker}>
-            <img src={jordan7} alt="" className={styles.sneaker__img} />
-            <span className={styles.sneaker__name}>Jordan 1 Mid SE Fearless Melody Ehsani</span>
-            <span className={styles.sneaker__precio}>885€</span>
-            <button className={styles.buttonLight} onClick={() => addToBasket({ id: 7, nombre: 'Jordan 1 Mid SE Fearless Melody Ehsani', precio: 885 })}>Add to basket <i className="bx bx-right-arrow-alt button-icon"></i></button>
-          </article>
-
-          <article className={styles.sneaker}>
-            <img src={jordan8} alt="" className={styles.sneaker__img} />
-            <span className={styles.sneaker__name}>Jordan 1 Retro High OG Palomino</span>
-            <span className={styles.sneaker__precio}>171€</span>
-            <button className={styles.buttonLight} onClick={() => addToBasket({ id: 8, nombre: 'Jordan 1 Retro High OG Palomino', precio: 171 })}>Add to basket <i className="bx bx-right-arrow-alt button-icon"></i></button>
-          </article>
-
-          <article className={styles.sneaker}>
-            <img src={jordan9} alt="" className={styles.sneaker__img} id="dnk" />
-            <span className={styles.sneaker__name} id="dnk-text">Nike SB Dunk Low Concepts Purple Lobster</span>
-            <span className={styles.sneaker__precio}>982€</span>
-            <button className={styles.buttonLight} onClick={() => addToBasket({ id: 9, nombre: 'Nike SB Dunk Low Concepts Purple Lobster', precio: 982 })}>Add to basket <i className="bx bx-right-arrow-alt button-icon"></i></button>
-          </article>
-
-          <article className={styles.sneaker}>
-            <img src={jordan10} alt="" className={styles.sneaker__img} id="onyx"/>
-            <span className={styles.sneaker__name} id="onyx-text">adidas Yeezy Foam RNR Onyx</span>
-            <span className={styles.sneaker__precio}>114€</span>
-            <button className={styles.buttonLight} onClick={() => addToBasket({ id: 10, nombre: 'adidas Yeezy Foam RNR Onyx', precio: 114})}>Add to basket <i className="bx bx-right-arrow-alt button-icon"></i></button>
-          </article>
-
-          <article className={styles.sneaker}>
-            <img src={jordan11} alt="" className={styles.sneaker__img} id="trvis" />
-            <span className={styles.sneaker__name} id="trvis">Jordan 1 Retro Low OG SP Fragment x Travis Scott</span>
-            <span className={styles.sneaker__precio}>1.444€</span>
-            <button className={styles.buttonLight} onClick={() => addToBasket({ id: 11, nombre: 'Jordan 1 Retro Low OG SP Fragment x Travis Scott', precio: 1444 })}>Add to basket <i className="bx bx-right-arrow-alt button-icon"></i></button>
-          </article>
         </div>
         
-        {/* <!--Paginador sin funcionamiento por le momento--> */}
-        <div className={`${styles.sneakerPages} ${styles.bdGrid}`}>
+        <div className={`${styles.sneaker__pages} ${styles.bdGrid}`}>
           <div>
-            <span className={styles.sneakerPag}>1</span>
-            <span className={styles.sneakerPag}>2</span>
-            <span className={styles.sneakerPag}>3</span>
-            <span className={styles.sneakerPag}>4</span>
-            <span className={styles.sneakerPag}>➔</span>
+            <span className={styles.sneaker__pag}>1</span>
+            <Link to="/shop2" className={styles.sneaker__pag}>2</Link>
+            <Link to="/shop3" className={styles.sneaker__pag}>3</Link>
           </div>
         </div>
       </section>

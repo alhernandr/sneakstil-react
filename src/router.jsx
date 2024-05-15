@@ -4,6 +4,8 @@ import { Routes, Route } from "react-router-dom";
 //importamos todas las vistas para despues imprementarlas
 import Home from "./views/home";
 import Shop from "./views/shop";
+import Shop2 from "./views/shop2";
+import Shop3 from "./views/shop3";
 import Login from "./views/login";
 import SignIn from "./views/signin";
 import Admin from "./views/indexAdmin";
@@ -16,6 +18,8 @@ function router() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/shop" element={<Shop />} />
+      <Route path="/shop2" element={<Shop2 />} />
+      <Route path="/shop3" element={<Shop3 />} />
       <Route path="/login" element={<Login />} />
       <Route path="/login/signin" element={<SignIn />} />
       <Route path='/admin' element={<Admin/>}/>

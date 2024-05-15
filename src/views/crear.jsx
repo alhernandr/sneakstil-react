@@ -85,7 +85,7 @@ const Crear = () => {
           </select>
 
           <div className={styles.log_button}>
-            <input type="submit" value="Crear propiedad" />
+            <input type="submit" value="Crear Sneaker" />
           </div>
         </form>
       </main>

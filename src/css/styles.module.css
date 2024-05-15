@@ -321,7 +321,60 @@ img {
   transform: rotate(-30deg);
   filter: drop-shadow(0 12px 8px rgba(0, 0, 0, 0.2));
 }
-.sneaker__name, .sneaker__preci {
+
+.sneaker__imgTravis{
+  width: 95%;
+  margin-top: 2.5rem;
+  margin-bottom: 1.5rem;
+  transform: rotate(-30deg);
+  filter: drop-shadow(0 12px 8px rgba(0, 0, 0, 0.2));
+}
+
+.sneaker__imgredd{
+  width: 90%;
+  margin-bottom: 1.5rem;
+  transform: rotate(-30deg);
+  filter: drop-shadow(0 12px 8px rgba(0, 0, 0, 0.2));
+}
+
+.sneaker__imgCanyon{
+  width: 85%;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  transform: rotate(-30deg);
+  filter: drop-shadow(0 12px 8px rgba(0, 0, 0, 0.2));
+}
+.sneaker__imgFrozen{
+  width: 85%;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  transform: rotate(-30deg);
+  filter: drop-shadow(0 12px 8px rgba(0, 0, 0, 0.2));
+}
+
+.sneaker__imgAirforce{
+  width: 85%;
+  margin-top: 1.9rem;
+  margin-bottom: 1.5rem;
+  transform: rotate(-30deg);
+  filter: drop-shadow(0 12px 8px rgba(0, 0, 0, 0.2));
+}
+
+.sneaker__imgCactus{
+  width: 85%;
+  margin-bottom: 1.5rem;
+  transform: rotate(-30deg);
+  filter: drop-shadow(0 12px 8px rgba(0, 0, 0, 0.2));
+}
+
+.sneaker__imgbonner{
+  width: 100%;
+  margin-bottom: 1.5rem;
+  transform: rotate(-30deg);
+  filter: drop-shadow(0 12px 8px rgba(0, 0, 0, 0.2));
+}
+
+.sneaker__name, .sneaker__precio {
   font-size: 1.25rem;
   letter-spacing: 0.1rem;
   font-weight: 700;
@@ -335,12 +388,54 @@ img {
   text-align: center;
   margin-top: 1.5rem;
 }
+.sneaker__namebonner{
+  font-size: 1.25rem;
+  letter-spacing: 0.1rem;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 0.9rem;
+}
+.sneaker__nameCactus{
+  font-size: 1.25rem;
+  letter-spacing: 0.1rem;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+.sneaker__nameredd{
+  font-size: 1.25rem;
+  letter-spacing: 0.1rem;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 2rem;
+}
+.sneaker__nameAirforce{
+  font-size: 1.25rem;
+  letter-spacing: 0.1rem;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 2rem;
+}
+.sneaker__nameFrzn{
+  font-size: 1.25rem;
+  letter-spacing: 0.1rem;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 2.3rem;
+}
 .sneaker__nameCanyon{
   font-size: 1.25rem;
   letter-spacing: 0.1rem;
   font-weight: 700;
   text-align: center;
   margin-top: 1rem;
+}
+.sneaker__nameCan{
+  font-size: 1.25rem;
+  letter-spacing: 0.1rem;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 2rem;
 }
 .sneaker__nameMidnight{
   font-size: 1.25rem;
@@ -355,6 +450,22 @@ img {
   font-weight: 700;
   text-align: center;
   margin-top: 2rem;
+}
+
+.sneaker__nameDior{
+  font-size: 1.25rem;
+  letter-spacing: 0.1rem;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.sneaker__nameTravis{
+  font-size: 1.25rem;
+  letter-spacing: 0.1rem;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 2.5rem;
 }
 
 .sneaker__name {
@@ -1062,7 +1173,7 @@ img{
   }
 
   .lognnn{
-    max-width: 45vh;
+    max-width: 46.3vh;
   }
   
   .container .buttonSignin {
@@ -1070,16 +1181,20 @@ img{
   }
 
   .container .buttonLogin{
-    padding: 5px 163px;
+    padding: 5px 169px;
   }
 
   html{
     scroll-behavior: smooth;
-    max-width: 55.2vh;
+    max-width: 56.5vh;
   }
 
   .logoHome{
-    margin-left: -3rem;
+    margin-left: -13rem;
+  }
+
+  .section__title{
+    margin-top: -1rem;
   }
 }
 
@@ -1094,4 +1209,18 @@ img{
 
 .logoHome{
   animation: rotateLogo 4s linear infinite;
+}
+
+.sneaker__pages {
+  margin-top: 3rem;
+}
+
+.sneaker__pag {
+  padding: 0.5rem 1rem;
+  border: 1px solid #141414;
+}
+
+.sneaker__pag:hover {
+  background-color: #141414;
+  color: #fff;
 }
