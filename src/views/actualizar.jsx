@@ -124,7 +124,7 @@ const Actualizar = () => {
           </select>
 
           <div className={styles.log_button}>
-            <input type="submit" name="" id="" className={styles.submit} value="Actualizar Sneaker" />
+            <input href="/admin" type="submit" name="" id="" className={styles.submit} value="Actualizar Sneaker" />
           </div>
         </form>
       </main>
