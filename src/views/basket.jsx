@@ -38,7 +38,7 @@ const Basket = () => {
         <br></br>
         <br></br>
         
-          <thead>
+          <thead style={{backgroundColor: "LightGray"}}>
             <tr>
               <td>Nombre</td>
               <td>Precio</td>
@@ -49,7 +49,7 @@ const Basket = () => {
             {basketProducts.map((product) => (
               <tr key={product.id}>
                 <td>{product.nombre}</td>
-                <td>{product.precio}</td>
+                <td>{product.precio}€</td>
                 <td>
                   <div>
                     <Button onClick={() => handleDeleteProduct(product.id)}>
@@ -59,13 +59,16 @@ const Basket = () => {
                 </td>
               </tr>
             ))}
+            <tr style={{backgroundColor: "LightGray"}}>
+                <td>Total</td>
+                <td>{basketProducts.reduce((total, product) => total + product.precio, 0)}€</td>
+            </tr>
           </tbody>
         
         <br></br>
         <br></br>
         <Button
-          href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-          target="_blank"
+          href="/basket/stuff"
           className={styles.botonVerde}
         >
           Continuar Al Pago

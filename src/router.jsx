@@ -10,6 +10,7 @@ import Admin from "./views/indexAdmin";
 import Basket from "./views/basket";
 import Actualizar from "./views/actualizar"
 import Crear from "./views/crear"
+import Stuff from "./views/stuff"
 
 function router() {
   return (
@@ -20,6 +21,7 @@ function router() {
       <Route path="/login/signin" element={<SignIn />} />
       <Route path='/admin' element={<Admin/>}/>
       <Route path="/basket" element={<Basket/>}/>
+      <Route path="/basket/stuff" element={<Stuff/>}/>
       <Route path="/admin/crear" element={<Crear/>}/>
       <Route path="/admin/actualizar/:id" element={<Actualizar/>}/>
     </Routes>
