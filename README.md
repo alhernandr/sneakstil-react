@@ -1,70 +1,115 @@
-# Getting Started with Create React App
+# Empezando con Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este proyecto fue creado con [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Scripts de arranque
 
-In the project directory, you can run:
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Ejecuta la aplicación en modo de desarrollo.\
+Abre [http://localhost:3000](http://localhost:3000) para verla en tu navegador.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+La página se recargará cuando hagas cambios.\
+También podrás ver cualquier error de lint en la consola.
 
-### `npm test`
+### `node server.js`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Ejecuta el servidor montado con node para su conexión con labase de datos
+Abre [http://localhost:5000/ "el nombre de la tabla que quieres acceder para ver los datos a los que acceder"](http://localhost:5000) para verla en tu navegador.
 
-### `npm run build`
+## Estructura del proyecto
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### node_module
+### public
+Estas son carpetas con datos que se generan automaticamente al instalar node en el proyecto y al crear el proyecto de React respectivamente.
+### src
+esta es la carpeta principal del proyecto. Contiene todo lo manualmente realizado del proyecto. 
+#### components
+Contiene los componentes que se importan, el footer y el header ya que son los que vemos en todas la vistas
+#### css
+Contiene el archivo css de todo el proyecto sin contar el css de los componentes
+#### database
+Contiene el archivo sql de la exportacion de la base de datos
+#### img
+Contiene todas las imagenes utilizadas en el proyecto
+#### views
+La mas importante del proyecto, en ella se encuentran los archivos de todas las vistas de la pagina.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Estructura del código
+En react la estructura es siempre la misma: 
+ -Los Imports: importacion de las bibliotecas o usos de la pagina, como imagenes o funciones.
+ -Las Funciones: todas las funciones que se usan en la vista se usan despues de declarar la vista en su const, pueden realizarse en esta parte del codigo o llamarlas desde otro archivo.
+ -El return: dentro del return va la estrcutura de la vista que se renderiza, tiene la misma estructura que HTML con la diferencia en la forma de llamar a las clases o el uso de etiquetas de bibliotecas de React como: "<Link>" o "<Button>".
+    
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![code](https://hackmd.io/_uploads/Syvb23XX0.png)
 
-### `npm run eject`
+    
+### Funciones
+ 
+La mayoria de las funciones en este proyecto, como en la foto de ejemplo, son conexiones con el servidor que accede a la base de datos. En otras vistas en las que hay otras funciones son de validacion de datos en general o por el inicio de sesion. Por ejemplo:
+    
+![funcoiens](https://hackmd.io/_uploads/r1O9kTXQ0.png)
+    
+    
+![asasdsa](https://hackmd.io/_uploads/H1q4epQXA.png)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Vistas
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Las vistas generales de este proyecto son:
+ - **home.jsx**: esta es la vista principal de la tienda
+- **shop.jsx**: vista de seleccion del producto para su inclusion en la cesta de compra
+- **login.jsx**: vista para el inicio de sesion en la página
+- **signin.jsx**: vista para el registro en la página
+- **basket.jsx**: vista para la administracion de los productos añadidos en la cesta y acceso al pago
+- **adminIndex.jsx**: vista de administrador para realizar el cruz llamando al servidor que accede a la base de datos
+    
+### Archivos importantes
+    
+- **server.js**: este archivo es el que contiene la conexion a la base de datos y las solicitudes llamadas en las funciones en cada vista necesaria.
+- **router.jsx**: en este archivo se encuentran todas las rutas que redirigen las vistas unas a otras.
+    ![router](https://hackmd.io/_uploads/B17L7a770.png)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+# Instrucciones de Uso
+## Requisitos Previos:
+- Para arrancar este proyecto necesitara, un editor de codigo(VsCode), XAMPP y Node.js
+- Antes de arrancar el programa hacer "npm i" en la terminal para descargar e instalar las dependencias usadas en el proyecto.
+    
+## Configuración de la Base de Datos:
+Descargar e Instalar XAMPP:
+Asegúrate de tener XAMPP instalado en tu sistema y, tras abrirlo, iniciar Apache y MySQL.
+### Importar la Base de Datos:
+Desde el panel de control de XAMPP, click en el botón Admin de MySQL (http://localhost/phpmyadmin)
 
-## Learn More
+Haz click en la pestaña "Importar".
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Sube el archivo SQL proporcionado (sneakstil.sql) para importar la estructura y los datos.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Explicación de la base de datos
+**Admin** - Administradores registrados
+    - id: (PRIMARY KEY) autoincremental
+    - nombre: nombre del admin
+    - email: email del admin
+    - pasword: contraseña
 
-### Code Splitting
+**Productos** - Creados por administradores, formados por zapatillas
+     - id: (PRIMARY KEY) autoincremental
+    - nombre: nombre del producto
+    - marca: marca del producto
+    - precio: precio del producto
+    - disponibilidad: disponibilidad del producto
+    - imagen: imagen del producto
+    
+**Clientes** - Información de todos los Clientes
+    - id: (PRIMARY KEY) autoincremental
+    - nombre: nombre del admin
+    - email: email del admin
+    - pasword: contraseña
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+# Autoría
+Este proyecto fue desarrollado por [**@alhernandr**](https://github.com/alhernandr) y [**@lyonelgj**](https://github.com/lyonelgj)
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# Licencia
+Proyecto elaborado para fines educativos para la asignatura Desarrollo Web en Entorno Servidor de segundo del CFGS de Desarrollo de Aplicaciones Web en el IES Ana Luisa Benítez.
