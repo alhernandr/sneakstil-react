@@ -26,6 +26,7 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
   margin-left: 3.5rem;
+  width: 100%;
 }
 
 h1,
@@ -961,7 +962,7 @@ img{
 }
 
 .lognnn{
-  width: 100%;
+  width: auto;
   padding: 100px 15px;
   background: linear-gradient( rgba(255, 255, 255, 0), rgba(0, 0, 0, .7)), url("../img/0f2603f2906b312521059e5dacd7ea76.jpeg");
   image-rendering: auto;
@@ -975,7 +976,6 @@ img{
   margin-bottom: 20px;
   color: #fff;
 }
-
 .container input[type="text"],
 .container input[type="email"],
 .container input[type="password"]{
@@ -992,9 +992,10 @@ img{
   color: #fff;
 }
 
-.container .buttonLogin {
+.buttonLogin {
   width: 100%;
-  padding: 5px 210px;
+  padding: 3px;
+  margin-bottom: 10px;
   background-color: #9a9ea08a;
   color: #ffffff;
   border: none;
@@ -1002,14 +1003,17 @@ img{
   font-size: 16px;
 }
 
-.container .buttonSignin {
+.buttonSignin {
   width: 100%;
-  padding: 5px 230px;
+  padding: 3px;
+  margin-bottom: 10px;
   background-color: #9a9ea08a;
   color: #ffffff;
   border: none;
   cursor: pointer;
   font-size: 16px;
+  display: flex;
+  justify-content: center;
 }
 
 .container .buttonLogin:hover {
@@ -1020,7 +1024,6 @@ img{
   width: 100%;
   backdrop-filter: blur(10px); 
   max-width: 500px;
-  margin: 10.3rem auto;
   padding: 20px;
   color: #fff;
   border-radius: 1rem;
@@ -1086,51 +1089,24 @@ img{
     margin: 5rem auto;
   }
 
-  .lognnn{
-    width: 82.2vh;
-  }
-  
-  .container .buttonSignin {
-    padding: 5px 167px; 
-  }
-
-  .container .buttonLogin{
-    padding: 5px 219px;
-  }
-
   html{
-    scroll-behavior: smooth;
-    margin-left: -3rem;
-    width: 82vh;
+    width: 102%;
+    margin-left: -3.7rem;
   }
 }
 
-@media screen and (max-width: 430px) {
+@media screen and (max-width: 688px) {
+
+}
+
+@media screen and (min-width: 430px) {
   .container {
     padding: 10px;
     margin: 5rem auto;
   }
 
   .lognnn{
-    max-width: 46.3vh;
-  }
-  
-  .container .buttonSignin {
-    padding: 5px 191px; 
-    display: flex;
-    justify-content: center;
-  }
-
-  .container .buttonLogin{
-    padding: 5px 191px;
-    display: flex;
-    justify-content: center;
-  }
-
-  html{
-    scroll-behavior: smooth;
-    max-width: 56.5vh;
-    margin-left: -3.5rem;
+    width: 101%;
   }
 
   .logoHome{
@@ -1140,29 +1116,11 @@ img{
   .section__title{
     margin-top: -1rem;
   }
+}
 
-  .sneaker{
-    width: 93%;
-  }
-
-  .collection__card{
-    width: 93%;
-  }
-
-  .offer__container{
-    width: 86%;
-  }
-
-  .new__mens{
-    width: 92%;
-  }
-
-  .new__sneaker{
-    width: 92%;
-  }
-
-  .newsletter{
-    width: 92%;
+@media screen and (max-width: 460x) {
+  .container{
+    width: 100%;
   }
 }
 
