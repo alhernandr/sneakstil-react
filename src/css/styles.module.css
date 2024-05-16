@@ -196,7 +196,6 @@ img {
   margin-bottom: 2rem;
   text-align: center;
   letter-spacing: 0.1rem;
-  margin-top: 4rem;
 }
 
 .section__title::after {
@@ -1095,10 +1094,6 @@ img{
   }
 }
 
-@media screen and (max-width: 688px) {
-
-}
-
 @media screen and (min-width: 430px) {
   .container {
     padding: 10px;
@@ -1114,7 +1109,7 @@ img{
   }
 
   .section__title{
-    margin-top: -1rem;
+    margin-top: 2rem;
   }
 }
 
