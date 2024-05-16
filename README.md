@@ -43,17 +43,19 @@ En react la estructura es siempre la misma:
  -El return: dentro del return va la estrcutura de la vista que se renderiza, tiene la misma estructura que HTML con la diferencia en la forma de llamar a las clases o el uso de etiquetas de bibliotecas de React como: "<Link>" o "<Button>".
     
 
-![code](https://hackmd.io/_uploads/Syvb23XX0.png)
+![code](https://github.com/alhernandr/sneakstil-react/assets/116368055/23565b22-8a1a-4848-8184-6e16c5e019f5)
+
 
     
 ### Funciones
  
 La mayoria de las funciones en este proyecto, como en la foto de ejemplo, son conexiones con el servidor que accede a la base de datos. En otras vistas en las que hay otras funciones son de validacion de datos en general o por el inicio de sesion. Por ejemplo:
     
-![funcoiens](https://hackmd.io/_uploads/r1O9kTXQ0.png)
+![Funciones](https://github.com/alhernandr/sneakstil-react/assets/116368055/8d7393ee-aafb-461b-ad1b-36ab68c78036)
+
     
     
-![asasdsa](https://hackmd.io/_uploads/H1q4epQXA.png)
+![Funciones2](https://github.com/alhernandr/sneakstil-react/assets/116368055/2a542b61-eab6-4917-a176-21fdb895e2d0)
 
 
 ### Vistas
@@ -70,7 +72,8 @@ Las vistas generales de este proyecto son:
     
 - **server.js**: este archivo es el que contiene la conexion a la base de datos y las solicitudes llamadas en las funciones en cada vista necesaria.
 - **router.jsx**: en este archivo se encuentran todas las rutas que redirigen las vistas unas a otras.
-    ![router](https://hackmd.io/_uploads/B17L7a770.png)
+   ![router](https://github.com/alhernandr/sneakstil-react/assets/116368055/fed981ca-0b45-460c-9d86-9ad8a6148906)
+
 
 # Instrucciones de Uso
 ## Requisitos Previos:
