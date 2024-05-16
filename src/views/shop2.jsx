@@ -90,7 +90,7 @@ const Shop = () => {
             <img src={jordanDior} alt="" className={styles.sneaker__img} id="dnk" />
             <span className={styles.sneaker__nameDior} id="dnk-text">Jordan 1 Retro High Dior</span>
             <span className={styles.sneaker__precio}>5.258€</span>
-            <button className={styles.buttonLight} onClick={() => addToBasket({ id: 9, nombre: 'Jordan 1 Retro High Dior', precio: 5.258 })}>Add to basket <i className="bx bx-right-arrow-alt button-icon"></i></button>
+            <button className={styles.buttonLight} onClick={() => addToBasket({ id: 9, nombre: 'Jordan 1 Retro High Dior', precio: 5258 })}>Add to basket <i className="bx bx-right-arrow-alt button-icon"></i></button>
           </article>
 
           <article className={styles.sneaker}>

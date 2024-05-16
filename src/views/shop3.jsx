@@ -88,7 +88,7 @@ const Shop = () => {
             <img src={redd} alt="" className={styles.sneaker__imgredd} id="trvis" />
             <span className={styles.sneaker__nameredd} id="trvis">Nike Air Yeezy 2 Red October</span>
             <span className={styles.sneaker__precio}>20.012€</span>
-            <button className={styles.buttonLight} onClick={() => addToBasket({ id: 14, nombre: 'Nike Air Yeezy 2 Red October', precio: 20.012 })}>Add to basket <i className="bx bx-right-arrow-alt button-icon"></i></button>
+            <button className={styles.buttonLight} onClick={() => addToBasket({ id: 14, nombre: 'Nike Air Yeezy 2 Red October', precio: 20012 })}>Add to basket <i className="bx bx-right-arrow-alt button-icon"></i></button>
           </article>
           <article className={styles.sneaker}>
             <img src={bonner} alt="" className={styles.sneaker__imgbonner} id="trvis" />

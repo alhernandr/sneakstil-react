@@ -1,13 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import styles from "../../css/styles.module.css";
+import styles from "./header.module.css";
 import logo from "../../img/logo.png";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faShop, faUser } from '@fortawesome/free-solid-svg-icons';
-import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
-import Cookies from 'js-cookie'; // Importa el paquete js-cookie
+import { faHome, faShop, faUser, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import Cookies from 'js-cookie';
 
-const Header = () => {
+const Header = ({ isLoggedIn }) => {
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -16,60 +15,57 @@ const Header = () => {
   };
 
   const handleLogout = () => {
-    Cookies.remove('token'); 
+    Cookies.remove('token');
     Cookies.set("basketProducts", "");
   };
-
-  const isLoggedIn = Cookies.get('token'); // Verifica si existe la cookie 'token'
 
   return (
     <div>
       <header className={styles.lHeader} id="header">
-        <nav className={styles.nav}>
-          <div className={styles.nav__toggled} id="nav-toggle">
-            <i className="bx bxs-grid"></i>
+        <nav>
+          <div className={styles.nav__logo}>
+            <Link to="/"  onClick={() => scrollToSection('home')}>
+              <img className={styles.logoHome} src={logo} alt="" />
+            </Link>
           </div>
-          <Link to="/" className={styles.nav__logo} onClick={() => scrollToSection('home')}>
-            <img className={styles.logoHome} src={logo} alt="" />
-          </Link>
           <div className={styles.nav__menu} id="nav-menu">
-            <ul className={styles.nav__list}>
-              <li className={styles.nav__item}>
-                <Link to="/" className={styles.nav__link}>
+            <ul>
+              <li >
+                <Link to="/">
                   <FontAwesomeIcon icon={faHome}/>
                 </Link>
               </li>
-              <li className={styles.nav__item}>
-                <Link to="/shop" className={styles.navLink}>
+              <li >
+                <Link to="/shop">
                   <FontAwesomeIcon icon={faShop}/>
                 </Link>
               </li>
-              {isLoggedIn ? ( // Si el usuario está autenticado, muestra el botón de "Logout"
-                <li className={styles.nav__item}>
-                  <Link to="/login" className={styles.navLink} onClick={handleLogout}>
+              {isLoggedIn ? (
+                <li>
+                  <Link to="/login" onClick={handleLogout}>
                     LogOut
                   </Link>
                 </li>
-              ) : ( // Si el usuario no está autenticado, muestra el icono de usuario
-                <li className={styles.nav__item}>
-                  <Link to="/login" className={styles.navLink}>
+              ) : (
+                <li>
+                  <Link to="/login">
                     <FontAwesomeIcon icon={faUser} />
                   </Link>
                 </li>
               )}
-              <li className={styles.nav__item}>
-                <Link to="/basket" className={styles.navLink}>
+              <li>
+                <Link to="/basket">
                   <FontAwesomeIcon className={styles.carrito} icon={faShoppingCart} />
                 </Link>
               </li>
             </ul>
           </div>
 
-          <a href="/login"><i class="bx bx-user"></i></a>
+          <a href="/login"><i className="bx bx-user"></i></a>
         
           <div className={styles.nav__shop}>
             <Link to="/basket">
-              <i  className="bx bx-shopping-bag"></i>
+              <i className="bx bx-shopping-bag"></i>
             </Link>
           </div>
         </nav>

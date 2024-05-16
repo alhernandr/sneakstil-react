@@ -18,13 +18,14 @@ html {
 }
 
 body {
-  margin: 3rem;
+  /* margin: 3rem; */
   font-family: "Poppins", sans-serif;
   font-size: 0.938rem;
   font-weight: 500;
   color: #141414;
   line-height: 1.6;
   overflow-x: hidden;
+  margin-left: 3.5rem;
 }
 
 h1,
@@ -118,69 +119,6 @@ img {
   transform: translateX(0.25rem);
 }
 
-.lHeader {
-  width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 100;
-  background-color: #f2f2f2;
-}
-
-/*===== NAV =====*/
-.nav {
-  height: 3rem;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-}
-
-@media screen and (max-width: 768px) {
-  .nav__menu {
-    position: fixed;
-    top: 3rem;
-    left: -100%;
-    width: 70%;
-    height: 100vh;
-    padding: 2rem;
-    background-color: #fff;
-    transition: 0.5s;
-  }
-}
-.nav__item {
-  margin-bottom: 2rem;
-}
-
-.nav__logo {
-  width: 3rem;
-  margin-right: -8rem;
-}
-
-.nav__toggled,
-.nav__shop {
-  font-size: 1.3rem;
-  cursor: pointer;
-}
-
-.section__title{
-  margin-top: 3rem;
-}
-
-.nav_user{
-  font-size: 1.3rem;
-  cursor: pointer;
-  margin-right: -15px;
-}
-
-.logoHome{
-  margin-left: 1rem;
-}
-
-.carrito{
-  margin-right: 1rem;
-}
-
 /*Show menu*/
 .show {
   left: 0;
@@ -249,21 +187,6 @@ img {
 .home__description {
   margin-bottom: 3rem;
 }
-
-.home::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  margin-bottom:20px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 0;
-  height: 0;
-  border-left: 20px solid transparent; /* Ajusta el tamaño de la flecha según sea necesario */
-  border-right: 20px solid transparent;
-  border-top: 20px solid #000;
-}
-
 
 /*==== SECTION TITLE SHOP ====*/
 .section__title {
@@ -767,6 +690,10 @@ img {
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
 
+.logButton{
+  width: 30%;
+}
+
 /* ===== MEDIA QUERIES=====*/
 @media screen and (min-width: 578px) {
   .collection__container {
@@ -810,39 +737,6 @@ img {
   .section__title::after {
     width: 76px;
   }
-
-  /*===== NAV =====*/
-  .nav {
-    height: 4.5rem;
-  }
-
-  .nav__menu {
-    /*margin-left: 50rem;*/
-    margin-left: auto;
-  }
-
-  .nav__list {
-    display: flex;
-  }
-
-  .nav__item {
-    margin-left: 3rem;
-    margin-bottom: 0;
-  }
-
-  .nav__toggle {
-    display: none;
-  }
-
-  .nav_logout{
-    font-size: 1rem;
-    
-  }
-
-  .nav__logo {
-    width: 3rem;
-  }
-
 
   /*===== HOME =====*/
   .home__container {
@@ -1241,19 +1135,6 @@ img{
   .section__title{
     margin-top: -1rem;
   }
-}
-
-@keyframes rotateLogo {
-  0% {
-    transform: rotateY(0deg);
-  }
-  100% {
-    transform: rotateY(360deg);
-  }
-}
-
-.logoHome{
-  animation: rotateLogo 4s linear infinite;
 }
 
 .sneaker__pages {

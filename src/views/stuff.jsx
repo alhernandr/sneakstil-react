@@ -106,6 +106,16 @@ const Stuff = () => {
           </div>
 
           <div className={styles.formGroup}>
+            <label htmlFor="tarjeta">Direccion:</label>
+            <input type="text" id="direccion" name="direccion" value={formData.tarjeta} onChange={handleChange}  placeholder="" required />
+          </div>
+
+          <div className={styles.formGroup}>
+            <label htmlFor="tarjeta">Codigo postal:</label>
+            <input type="text" id="codigoPostal" name="codigoPostal" value={formData.tarjeta} onChange={handleChange}  placeholder="" required />
+          </div>
+
+          <div className={styles.formGroup}>
             <label htmlFor="tarjeta">Número de Tarjeta:</label>
             <input type="text" id="tarjeta" name="tarjeta" value={formData.tarjeta} onChange={handleChange} pattern="[0-9]{13,16}" placeholder="XXXX-XXXX-XXXX-XXXX" required />
             <small>Debe contener entre 13 y 16 dígitos numéricos.</small>
