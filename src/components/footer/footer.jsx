@@ -66,24 +66,6 @@ const Footer = () => {
                   New
                 </Link>
               </li>
-              {isLoggedIn ? ( // Si el usuario está autenticado, muestra el botón de "Logout"
-                <li className={styles.nav__item}>
-                  <Link to="/login" className={styles.navLink} onClick={handleLogout}>
-                    LogOut
-                  </Link>
-                </li>
-              ) : ( // Si el usuario no está autenticado, muestra el icono de usuario
-                <li className={styles.nav__item}>
-                  <Link to="/login" className={styles.navLink}>
-                    <FontAwesomeIcon icon={faUser} />
-                  </Link>
-                </li>
-              )}
-              <li className={styles.nav__item}>
-                <Link to="/basket" className={styles.navLink}>
-                  <FontAwesomeIcon className={styles.carrito} icon={faShoppingCart} />
-                </Link>
-              </li>
             </ul>
           </div>
 

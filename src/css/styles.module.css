@@ -1004,7 +1004,7 @@ img{
 
 .container .buttonSignin {
   width: 100%;
-  padding: 5px 203px;
+  padding: 5px 230px;
   background-color: #9a9ea08a;
   color: #ffffff;
   border: none;
@@ -1116,16 +1116,21 @@ img{
   }
   
   .container .buttonSignin {
-    padding: 5px 110px; 
+    padding: 5px 191px; 
+    display: flex;
+    justify-content: center;
   }
 
   .container .buttonLogin{
-    padding: 5px 169px;
+    padding: 5px 191px;
+    display: flex;
+    justify-content: center;
   }
 
   html{
     scroll-behavior: smooth;
     max-width: 56.5vh;
+    margin-left: -3.5rem;
   }
 
   .logoHome{
@@ -1134,6 +1139,30 @@ img{
 
   .section__title{
     margin-top: -1rem;
+  }
+
+  .sneaker{
+    width: 93%;
+  }
+
+  .collection__card{
+    width: 93%;
+  }
+
+  .offer__container{
+    width: 86%;
+  }
+
+  .new__mens{
+    width: 92%;
+  }
+
+  .new__sneaker{
+    width: 92%;
+  }
+
+  .newsletter{
+    width: 92%;
   }
 }
 
