@@ -31,16 +31,16 @@ const Header = ({ isLoggedIn }) => {
           <div className={styles.nav__menu} id="nav-menu">
             <ul>
               <li >
-                <Link to="/">
+                <Link to="/" data-cy="home">
                   <FontAwesomeIcon icon={faHome}/>
                 </Link>
               </li>
               <li >
-                <Link to="/shop">
+                <Link to="/shop" data-cy="shop">
                   <FontAwesomeIcon icon={faShop}/>
                 </Link>
               </li>
-              {isLoggedIn ? (
+                {isLoggedIn ? (
                 <li>
                   <Link to="/login" onClick={handleLogout}>
                     LogOut
@@ -48,13 +48,13 @@ const Header = ({ isLoggedIn }) => {
                 </li>
               ) : (
                 <li>
-                  <Link to="/login">
+                  <Link to="/login" data-cy="login">
                     <FontAwesomeIcon icon={faUser} />
                   </Link>
                 </li>
               )}
-              <li>
-                <Link to="/basket">
+              <li >
+                <Link to="/basket" data-cy="basket">
                   <FontAwesomeIcon className={styles.carrito} icon={faShoppingCart} />
                 </Link>
               </li>

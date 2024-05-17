@@ -118,24 +118,24 @@ const SignIn = () => {
             {/* //NOMBRE */}
             <label htmlFor="nombre"></label><br />
             <div className={styles.error}>{errors.nombre}</div>
-            <input type="text" placeholder='Username' id="nombre" name="nombre" value={nombre} onChange={handleNombreChange} required />
+            <input data-cy="username" type="text" placeholder='Username' id="nombre" name="nombre" value={nombre} onChange={handleNombreChange} required />
           
             {/* //EMAIL */}
             <label htmlFor="email"></label><br />
             <div className={styles.error}>{errors.email}</div>
-            <input type="text" placeholder='Email' id="email" name="email" value={email} onChange={handleEmailChange} required />
+            <input data-cy="email" type="text" placeholder='Email' id="email" name="email" value={email} onChange={handleEmailChange} required />
           
             {/* //CONTRASEÑA */}
             <label htmlFor="password"></label><br />
             <div className={styles.error}>{errors.pasword}</div>
-            <input type="password" placeholder='Password' id="password" name="password" value={pasword} onChange={handlePasswordChange} required />
+            <input data-cy="password" type="password" placeholder='Password' id="password" name="password" value={pasword} onChange={handlePasswordChange} required />
 
             <div className={styles.logButton}>
-              <input className={styles.buttonSignin} type="submit" value="Sign In" />
+              <input data-cy="signIn" className={styles.buttonSignin} type="submit" value="Sign In" />
             </div>
             
             <div className={styles.createaccount}>
-              <Link to="/login">Already have an account?</Link>
+              <Link  to="/login">Already have an account?</Link>
             </div>
           </form>
         </div>

@@ -120,6 +120,7 @@ const Login = () => {
           <h1>LOGIN</h1>
           <form >
             <input
+              data-cy="email"
               type="text"
               placeholder="Username"
               id="nombre"
@@ -130,6 +131,7 @@ const Login = () => {
             />
             <div className={styles.error}>{errors.nombre}</div>
             <input
+              data-cy="password"
               type="password"
               placeholder="Password"
               id="clave"
@@ -140,10 +142,10 @@ const Login = () => {
             />
             <div className={styles.error}>{errors.pasword}</div>
             <div className={styles.logButton}>
-                <Button href="/" className={styles.buttonLogin} type="submit" value="Login" onClick={handleSubmit} >Login</Button>
+                <Button data-cy="logIn" href="/" className={styles.buttonLogin} type="submit" value="Login" onClick={handleSubmit} >Login</Button>
               </div>            
             <div className={styles.createaccount}>
-              <Link to="/login/signin">Create an account</Link>
+              <Link data-cy="login" to="/login/signin">Create an account</Link>
             </div>
           </form>
         </div>
