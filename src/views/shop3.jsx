@@ -82,7 +82,7 @@ const Shop = () => {
             <img src={airforce2} alt="" className={styles.sneaker__imgCactus} id="trvis" />
             <span className={styles.sneaker__nameCactus} id="trvis">Nike Air Force 1 Low Cactus Plant Flea Market Black (2024)</span>
             <span className={styles.sneaker__precio}>322€</span>
-            <button className={styles.buttonLight} onClick={() => addToBasket({ id: 13, nombre: 'Nike Air Force 1 Low Cactus Plant Flea Market Black (2024)', precio: 322 })}>Add to basket <i className="bx bx-right-arrow-alt button-icon"></i></button>
+            <button data-cy="compraAirforce" className={styles.buttonLight} onClick={() => addToBasket({ id: 13, nombre: 'Nike Air Force 1 Low Cactus Plant Flea Market Black (2024)', precio: 322 })}>Add to basket <i className="bx bx-right-arrow-alt button-icon"></i></button>
           </article>
           <article className={styles.sneaker}>
             <img src={redd} alt="" className={styles.sneaker__imgredd} id="trvis" />
@@ -94,7 +94,7 @@ const Shop = () => {
             <img src={bonner} alt="" className={styles.sneaker__imgbonner} id="trvis" />
             <span className={styles.sneaker__namebonner} id="trvis">adidas Samba Pony Tonal Wales Bonner</span>
             <span className={styles.sneaker__precio}>470€</span>
-            <button className={styles.buttonLight} onClick={() => addToBasket({ id: 15, nombre: 'adidas Samba Pony Tonal Wales Bonner', precio: 470 })}>Add to basket <i className="bx bx-right-arrow-alt button-icon"></i></button>
+            <button data-cy="compraBonnes" className={styles.buttonLight} onClick={() => addToBasket({ id: 15, nombre: 'adidas Samba Pony Tonal Wales Bonner', precio: 470 })}>Add to basket <i className="bx bx-right-arrow-alt button-icon"></i></button>
           </article>
         </div>
         

@@ -97,41 +97,41 @@ const Stuff = () => {
           <h2>Formulario de Pago</h2>
           <div className={styles.formGroup}>
             <label htmlFor="nombre">Nombre Completo:</label>
-            <input type="text" id="nombre" name="nombre" value={formData.nombre} onChange={handleChange} required />
+            <input data-cy="compraNombre" type="text" id="nombre" name="nombre" value={formData.nombre} onChange={handleChange} required />
           </div>
 
           <div className={styles.formGroup}>
             <label htmlFor="email">Correo Electrónico:</label>
-            <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} placeholder="_______@_____._____" required />
+            <input data-cy="compraCorreo" type="email" id="email" name="email" value={formData.email} onChange={handleChange} placeholder="_______@_____._____" required />
           </div>
 
           <div className={styles.formGroup}>
             <label htmlFor="tarjeta">Direccion:</label>
-            <input type="text" id="direccion" name="direccion" value={formData.tarjeta} onChange={handleChange}  placeholder="" required />
+            <input data-cy="compraDireccion" type="text" id="direccion" name="direccion" value={formData.direccion} onChange={handleChange}  placeholder="" required />
           </div>
 
           <div className={styles.formGroup}>
             <label htmlFor="tarjeta">Codigo postal:</label>
-            <input type="text" id="codigoPostal" name="codigoPostal" value={formData.tarjeta} onChange={handleChange}  placeholder="" required />
+            <input data-cy="compraCP" type="text" id="codigoPostal" name="codigoPostal" value={formData.codigo} onChange={handleChange}  placeholder="" required />
           </div>
 
           <div className={styles.formGroup}>
             <label htmlFor="tarjeta">Número de Tarjeta:</label>
-            <input type="text" id="tarjeta" name="tarjeta" value={formData.tarjeta} onChange={handleChange} pattern="[0-9]{13,16}" placeholder="XXXX-XXXX-XXXX-XXXX" required />
+            <input data-cy="compraTarjeta" type="text" id="tarjeta" name="tarjeta" value={formData.tarjeta} onChange={handleChange} pattern="[0-9]{13,16}" placeholder="XXXX-XXXX-XXXX-XXXX" required />
             <small>Debe contener entre 13 y 16 dígitos numéricos.</small>
           </div>
 
           <div className={styles.formGroup}>
             <label htmlFor="vencimiento">Fecha de Vencimiento:</label>
-            <input type="text" id="vencimiento" name="vencimiento" value={formData.vencimiento} onChange={handleChange} placeholder="MM/AA" pattern="(0[1-9]|1[0-2])\/([0-9]{2})" required />
+            <input data-cy="compraVencimiento" type="text" id="vencimiento" name="vencimiento" value={formData.vencimiento} onChange={handleChange} placeholder="MM/AA" pattern="(0[1-9]|1[0-2])\/([0-9]{2})" required />
           </div>
 
           <div className={styles.formGroup}>
             <label htmlFor="cvv">CVV:</label>
-            <input type="text" id="cvv" name="cvv" value={formData.cvv} onChange={handleChange} pattern="[0-9]{3,4}" required />
+            <input data-cy="compraCVV" type="text" id="cvv" name="cvv" value={formData.cvv} onChange={handleChange} pattern="[0-9]{3,4}" required />
             <small>Debe contener entre 3 digitos</small>
           </div>
-            <Button type="submit" className={styles.botonVerde}>
+            <Button data-cy="compraPagar" type="submit" className={styles.botonVerde}>
                 Pagar
             </Button>
         </form>

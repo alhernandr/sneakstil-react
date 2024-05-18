@@ -20,12 +20,6 @@ import jordan2 from '../img/Jordan 4 Retro Military Black.png'
 import jordan3 from '../img/air-jordan-3-retro-sp-j-balvin-removebg-preview.png'
 import jordan4 from '../img/Jordan 4 Retro Canyon Purple.png'
 import jordan5 from '../img/Jordan 4 Frozen Moments.png'
-import jordan6 from '../img/Jordan 11 Retro Midnight Navy.png'
-import jordan7 from '../img/Jordan 1 Mid SE Fearless Melody Ehsani.png'
-import jordan8 from '../img/Jordan 1 Retro High OG Palomino.png'
-import jordan9 from '../img/Nike SB Dunk Low Concepts Purple Lobster.png'
-import jordan10 from '../img/Adidas Yeezy Foam RNR Onyx.png'
-import jordan11 from '../img/Jordan 1 Retro Low OG SP Fragment x Travis Scott.png'
 
 /**
  * Componente funcional que representa la página de tienda.
@@ -96,21 +90,21 @@ const Shop = () => {
             <img src={jordan4} alt="" className={styles.sneaker__imgCanyon} />
             <span className={styles.sneaker__nameCan}>Jordan 4 Retro Canyon Purple</span>
             <span className={styles.sneaker__precio}>289€</span>
-            <button className={styles.buttonLight} onClick={() => addToBasket({ id: 4, nombre: 'Jordan 4 Retro Canyon Purple', precio: 289 })}>Add to basket <i className="bx bx-right-arrow-alt button-icon"></i></button>
+            <button data-cy="compraCanyonn" className={styles.buttonLight} onClick={() => addToBasket({ id: 4, nombre: 'Jordan 4 Retro Canyon Purple', precio: 289 })}>Add to basket <i className="bx bx-right-arrow-alt button-icon"></i></button>
           </article>
 
           <article className={styles.sneaker}>
             <img src={jordan5} alt="" className={styles.sneaker__imgFrozen} />
             <span className={styles.sneaker__nameFrzn}>Jordan 4 Retro Frozen Moments</span>
             <span className={styles.sneaker__precio}>284€</span>
-            <button className={styles.buttonLight} onClick={() => addToBasket({ id: 5, nombre: 'Jordan 4 Frozen Moments', precio: 284 })}>Add to basket <i className="bx bx-right-arrow-alt button-icon"></i></button>
+            <button data-cy="compraFrozen" className={styles.buttonLight} onClick={() => addToBasket({ id: 5, nombre: 'Jordan 4 Frozen Moments', precio: 284 })}>Add to basket <i className="bx bx-right-arrow-alt button-icon"></i></button>
           </article>
         </div>
         
         <div className={`${styles.sneaker__pages} ${styles.bdGrid}`}>
           <div>
             <span className={styles.sneaker__pag}>1</span>
-            <Link to="/shop2" className={styles.sneaker__pag}>2</Link>
+            <Link data-cy="shop2" to="/shop2" className={styles.sneaker__pag}>2</Link>
             <Link to="/shop3" className={styles.sneaker__pag}>3</Link>
           </div>
         </div>

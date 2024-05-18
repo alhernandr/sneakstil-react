@@ -64,28 +64,28 @@ const Crear = () => {
           <legend><u>Información General</u></legend>
 
           <label htmlFor="nombre">Nombre: </label>
-          <input type="text" id="nombre" name="nombre" value={nombre} onChange={(e) => setNombre(e.target.value)} />
+          <input data-cy="usernameSneaker" type="text" id="nombre" name="nombre" value={nombre} onChange={(e) => setNombre(e.target.value)} />
 
           <label htmlFor="marca">Marca:</label>
-          <input type="text" name="marca" id="marca" value={marca} onChange={(e) => setMarca(e.target.value)} />
+          <input data-cy="marcaSneaker" type="text" name="marca" id="marca" value={marca} onChange={(e) => setMarca(e.target.value)} />
 
           <label htmlFor="imagen">Imagen:</label>
           <input type="file" name="imagen" id="imagen" value={imagen} accept="image/jpeg, image/png, image/jpg" onChange={(e) => setImagen(e.target.files[0])} />
 
           <label htmlFor="precio">Precio:</label>
-          <input type="text" name="precio" id="precio" value={precio} onChange={(e) => setPrecio(e.target.value)} />
+          <input data-cy="precioSneaker" type="text" name="precio" id="precio" value={precio} onChange={(e) => setPrecio(e.target.value)} />
 
           <label htmlFor="disponibilidad">Disponibilidad:</label>
-          <input type="text" name="disponibilidad" id="disponibilidad" value={disponibilidad} onChange={(e) => setDisponibilidad(e.target.value)} />
+          <input data-cy="disponibilidadSneaker" type="text" name="disponibilidad" id="disponibilidad" value={disponibilidad} onChange={(e) => setDisponibilidad(e.target.value)} />
 
           <legend><u>Vendedor</u></legend>
-          <select name="vendedor" id="vendedor">
+          <select data-cy="vendedorSneaker" name="vendedor" id="vendedor">
             <option value="1">Lyonel</option>
             <option value="2">Álvaro</option>
           </select>
 
           <div className={styles.log_button}>
-            <input href="/admin" type="submit" value="Crear Sneaker"/>
+            <input data-cy="crearSneaker" href="/admin" type="submit" value="Crear Sneaker"/>
           </div>
         </form>
       </main>

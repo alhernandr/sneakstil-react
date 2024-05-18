@@ -66,7 +66,7 @@ const IndexAdmin = () => {
       <div className={`${styles.contenedorAdmin} ${styles.section}`}>
         <h1>Administrador</h1>
         <br />
-        <Link to="/admin/crear" className={styles.botonVerde}>
+        <Link to="/admin/crear" className={styles.botonVerde} data-cy="crearSneaker">
           Nueva Sneaker
         </Link>
         <br></br>
@@ -95,7 +95,7 @@ const IndexAdmin = () => {
                   ---------
                 </div>
                 <div>
-                  <Button href="" onClick={() => handleDelete(dato.id)}>Borrar</Button>
+                  <Button data-cy="eliminarSneaker" href="" onClick={() => handleDelete(dato.id)}>Borrar</Button>
                 </div>
               </td>
             </tr>

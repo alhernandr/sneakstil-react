@@ -10,7 +10,6 @@
 
 import React,{useState, useEffect} from 'react';
 import { Link } from "react-router-dom";
-import axios from 'axios';
 import Cookies from 'js-cookie';
 import Header from '../components/header/header'
 import Footer from '../components/footer/footer'
@@ -90,14 +89,14 @@ const Shop = () => {
             <img src={jordanDior} alt="" className={styles.sneaker__img} id="dnk" />
             <span className={styles.sneaker__nameDior} id="dnk-text">Jordan 1 Retro High Dior</span>
             <span className={styles.sneaker__precio}>5.258€</span>
-            <button className={styles.buttonLight} onClick={() => addToBasket({ id: 9, nombre: 'Jordan 1 Retro High Dior', precio: 5258 })}>Add to basket <i className="bx bx-right-arrow-alt button-icon"></i></button>
+            <button data-cy="compraDior" className={styles.buttonLight} onClick={() => addToBasket({ id: 9, nombre: 'Jordan 1 Retro High Dior', precio: 5258 })}>Add to basket <i className="bx bx-right-arrow-alt button-icon"></i></button>
           </article>
 
           <article className={styles.sneaker}>
             <img src={travis} alt="" className={styles.sneaker__imgTravis} id="onyx"/>
             <span className={styles.sneaker__nameTravis} id="onyx-text">Jordan Jumpman Jack TR Travis Scott Sail</span>
             <span className={styles.sneaker__precio}>790€</span>
-            <button className={styles.buttonLight} onClick={() => addToBasket({ id: 10, nombre: 'Jordan Jumpman Jack TR Travis Scott Sail', precio: 790})}>Add to basket <i className="bx bx-right-arrow-alt button-icon"></i></button>
+            <button data-cy="compraTravis" className={styles.buttonLight} onClick={() => addToBasket({ id: 10, nombre: 'Jordan Jumpman Jack TR Travis Scott Sail', precio: 790})}>Add to basket <i className="bx bx-right-arrow-alt button-icon"></i></button>
           </article>
         </div>
         
@@ -105,7 +104,7 @@ const Shop = () => {
           <div>
             <Link to="/shop" className={styles.sneaker__pag}>1</Link>
             <span className={styles.sneaker__pag}>2</span>
-            <Link to="/shop3" className={styles.sneaker__pag}>3</Link>
+            <Link data-cy="shop3" to="/shop3" className={styles.sneaker__pag}>3</Link>
           </div>
         </div>
       </section>

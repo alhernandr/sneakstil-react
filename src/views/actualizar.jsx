@@ -103,28 +103,28 @@ const Actualizar = () => {
           <legend><u>Información General</u></legend>
 
           <label htmlFor="Nombre">Nombre: </label>
-          <input type="text" id="Nombre" name="Nombre" value={nombre} onChange={(e) => setNombre(e.target.value)} />
+          <input data-cy="usernameSneaker" type="text" id="Nombre" name="Nombre" value={nombre} onChange={(e) => setNombre(e.target.value)} />
 
           <label htmlFor="Marca">Marca:</label>
-          <input type="text" name="Marca" id="marca" value={marca} onChange={(e) => setMarca(e.target.value)} />
+          <input data-cy="marcaSneaker" type="text" name="Marca" id="marca" value={marca} onChange={(e) => setMarca(e.target.value)} />
 
           <label htmlFor="imagen">Imagen:</label>
           <input type="file" name="imagen" id="imagen" accept="image/jpeg, image/png, image/jpg" onChange={(e) => setImagen(e.target.files[0])} />
 
           <label htmlFor="Precio">Precio:</label>
-          <input type="text" name="Precio" id="precio" placeholder="Precio del sneakers..." value={precio} onChange={(e) => setPrecio(e.target.value)} />
+          <input data-cy="precioSneaker" type="text" name="Precio" id="precio" placeholder="Precio del sneakers..." value={precio} onChange={(e) => setPrecio(e.target.value)} />
 
           <label htmlFor="Disponibilidad">Disponibilidad:</label>
-          <input type="text" name="Disponibilidad" id="disponibilidad" placeholder="Disponibilidad del sneakers..." value={disponibilidad} onChange={(e) => setDisponibilidad(e.target.value)} />
+          <input data-cy="disponibilidadSneaker" type="text" name="Disponibilidad" id="disponibilidad" placeholder="Disponibilidad del sneakers..." value={disponibilidad} onChange={(e) => setDisponibilidad(e.target.value)} />
 
           <legend><u>Vendedor</u></legend>
-          <select name="vendedor" id="vendedor">
+          <select data-cy="vendedorSneaker" name="vendedor" id="vendedor">
             <option value="1">Lyonel</option>
             <option value="2">Álvaro</option>
           </select>
 
           <div className={styles.log_button}>
-            <input href="/admin" type="submit" name="" id="" className={styles.submit} value="Actualizar Sneaker" />
+            <input data-cy="ActualizarSneaker" href="/admin" type="submit" name="" id="" className={styles.submit} value="Actualizar Sneaker" />
           </div>
         </form>
       </main>

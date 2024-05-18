@@ -73,3 +73,65 @@ Cypress.Commands.add('register', (username, email, password) => {
 
     cy.get('[data-cy=signIn]').click();
 });
+
+Cypress.Commands.add('crearSneaker', (username, marca, imagen, precio, disponibilidad) => {
+  cy.loginAdmin('lionel', 'admin');
+
+  cy.url().should('include', '/admin');
+
+  cy.get('[data-cy=crearSneaker]').click();
+
+  cy.visit('http://localhost:3000/admin/crear');
+
+  cy.get('[data-cy=usernameSneaker]').type(username);
+  cy.get('[data-cy=marcaSneaker]').type(marca);
+  cy.get('[data-cy=precioSneaker]').type(precio);
+  cy.get('[data-cy=disponibilidadSneaker]').type(disponibilidad);
+  cy.get('[data-cy=vendedorSneaker]').select('1');
+  cy.get('[data-cy=crearSneaker]').click();
+});
+
+Cypress.Commands.add('actualizarSneaker', (username, marca, imagen, precio, disponibilidad) => {
+  cy.loginAdmin('lionel', 'admin');
+
+  cy.url().should('include', '/admin');
+
+  cy.get('[data-cy=crearSneaker]').click();
+
+  cy.visit('http://localhost:3000/admin/actualizar');
+
+  cy.get('[data-cy=usernameSneaker]').type(username);
+  cy.get('[data-cy=marcaSneaker]').type(marca);
+  cy.get('[data-cy=precioSneaker]').type(precio);
+  cy.get('[data-cy=disponibilidadSneaker]').type(disponibilidad);
+  cy.get('[data-cy=vendedorSneaker]').select('1');
+  cy.get('[data-cy=crearSneaker]').click();
+});
+
+Cypress.Commands.add('compraSneakers', () => {
+  cy.login('jaun', '12345');
+
+  cy.url().should('include', '/');
+
+  cy.get('[data-cy=shop]').click();
+
+  cy.url().should('include', '/shop');
+
+  cy.get('[data-cy=compraCanyonn]').click();
+
+  cy.get('[data-cy=compraFrozen]').click();
+
+  cy.get('[data-cy=shop2]').click();
+
+  cy.get('[data-cy=compraDior]').click();
+
+  cy.get('[data-cy=compraTravis]').click();
+
+  cy.get('[data-cy=shop3]').click();
+
+  cy.get('[data-cy=compraAirforce]').click();
+
+  cy.get('[data-cy=compraBonnes]').click();
+
+  cy.visit('http://localhost:3000/basket');
+});

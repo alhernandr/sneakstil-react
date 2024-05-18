@@ -68,6 +68,7 @@ const Basket = () => {
         <br></br>
         <br></br>
         <Button
+          data-cy="compraPago"
           href="/basket/stuff"
           className={styles.botonVerde}
         >
